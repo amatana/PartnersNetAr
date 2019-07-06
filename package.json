@@ -1,0 +1,44 @@
+{
+  "name": "partners",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./back/server.js",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amatana/PartnersNetAr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amatana/PartnersNetAr/issues"
+  },
+  "homepage": "https://github.com/amatana/PartnersNetAr#readme",
+  "dependencies": {
+    "@types/dotenv": "^6.1.1",
+    "body-parser": "^1.19.0",
+    "connect-session-sequelize": "^6.0.0",
+    "cookie-parser": "^1.4.4",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "pg": "^7.11.0",
+    "pg-hstore": "^2.3.3",
+    "react": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "sequelize": "^5.9.3"
+  },
+  "devDependencies": {
+    "webpack": "^4.35.2"
+  }
+}
