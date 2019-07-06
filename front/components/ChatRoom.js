@@ -11,6 +11,18 @@ class ChatRoom extends Component{
         }
     }
 
+componentDidMount(){
+    window.firebase.database().ref('/').on('value',snap =>{
+        const currentMessages = snap.val()
+        console.log(currentMessages.messages)
+        if(currentMessages != null){
+        this.setState({
+            messages: currentMessages.messages
+        })
+        }
+    })
+}
+
 
 handleSubmit(e){
     e.preventDefault()
@@ -20,9 +32,12 @@ handleSubmit(e){
         text: this.state.message
     }
     list.push(newMessage)
-    this.setState({message: list})
+    // this.setState({message: list})
+    window.firebase.database().ref(`messages/${newMessage.id}`)
+    .set(newMessage)
     this.setState({message:''})
 }
+
 updateMessage(e){
     
     this.setState({message:e.target.value})
@@ -57,5 +72,4 @@ const  messageList = messages.map(message=>{
 
     }
 }
-
 export default ChatRoom
