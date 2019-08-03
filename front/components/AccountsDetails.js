@@ -22,7 +22,7 @@ class AccountDetails extends Component{
         <div>
             <Welcome/>
             <form action="">
-                <p style={style.pregunta}>3. Otras Redes sociales</p>
+                <p style={style.pregunta}>3. Linkedin</p>
                 <input 
                 style={style.input}
                 type="text"
