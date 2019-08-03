@@ -15,17 +15,14 @@ class UserDetails extends Component{
 
     render(){
         const {values}=this.props
-        const style = {}
-        style.pregunta= {	height: "22px",	/*width: "171px",*/	color: "#9B9B9B",	fontFamily: "Helvetica",	fontSize: "18px",	lineHeight: "22px",}
-        style.input= {	height: "45px",	width: "331px",	backgroundColor: "#FBFBFF",	boxShadow: "0 2px 10px 0 #EDEDED",border: "transparent"}
-
+        
         return(
         <div>
             <Welcome/>
             <form action="">
-                <p style={style.pregunta}>2. Coloca tu nombre de usuario</p>
+                <p  className="pregunta">2. Coloca tu nombre de usuario</p>
                 <input 
-                style={style.input}
+                className="input"
                 type="text"
                 onChange={this.props.handleChange('user')}
                 defaultValue={values.user} />
