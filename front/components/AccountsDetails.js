@@ -19,6 +19,7 @@ class AccountDetails extends Component{
         <div>
             <Welcome/>
             <form action="">
+
                 <p className="pregunta">3. Linkedin</p>
                 <input 
                 className="input"
