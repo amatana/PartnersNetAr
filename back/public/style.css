@@ -43,6 +43,73 @@ line-height: 36px;
     /*column-gap: 2rem;*/
     }
 
+.pregunta{
+    	height: 22px;
+        /*width: 171px;*/
+        color: #9B9B9B;
+    	font-Family: "Helvetica";
+    	font-Size: 18px;
+    	line-Height: 22px;
+}
+
+.input{ 
+        height: 45px;
+        width: 331px;
+        background-color: #FBFBFF;
+        box-shadow: 0 2px 10px 0 #EDEDED;
+        border: transparent
+}
+
+.textarea{	
+        height: 204px;
+    	width: 331px;
+    	background-color: #FBFBFF;
+    	box-shadow: 0 2px 10px 0 #EDEDED;
+        border-color: transparent;
+        font-family: "Helvetica";
+        color: #044087;
+        font-size: 14px
+    }
+
+.typeButton{
+    	height: 44px;
+    	width: 331px;
+    	border: 2px solid #EF4166;
+    	border-Radius: 4px;
+        background-Color: transparent;
+        margin-Bottom:0.5em;
+        color: #EF4166;
+    	font-Family: "Avenir Next";
+    	font-Size: 19px;
+    	font-Weight: 500;
+    	line-Height: 19px;
+    	text-Align: center;
+}
+
+.boxList{
+    margin: 0.2em;
+    border: 0.16em solid #EF4166;
+    border-Radius: 4px;
+    position:relative;
+    display:inline-block
+}
+
+.textList{
+    background-Color: #FBFBFF;
+    color: #EF4166;
+    text-Align: center;
+    vertical-Align: middle;
+    font-Family: "Avenir Next";
+    font-Weight: 600;
+    margin:0.5em
+}
+
+.achievBienvenido{font-Family: "Avenir Next";	color: "#044087"}
+.achievName{height: 80px;	width: 446px;font-Family: "Avenir Next";	font-Size: 36px;
+    line-Height: 40px;	 font-Weight: 600; color: #EF4166;}
+.achievConocernos{height: 20px;	width: 469px;	color: #044087;	font-Family: "Avenir Next";	font-Size: 14px;	line-Height: 20px;}
+
+
 .continuar{
     /* height: 72px;
     width: 82px; */

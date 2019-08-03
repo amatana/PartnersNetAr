@@ -7,7 +7,7 @@ class Confirmation extends Component{
     }
     back=(e)=>{
         e.preventDefault()
-        if(!this.props.values.type==='tengo mi proyecto'){
+        if(!(this.props.values.type==='tengo mi proyecto')){
             this.props.withoutProyect()
         }else{
         this.props.prevStep()

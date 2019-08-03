@@ -10,6 +10,8 @@ import Achievements from './Achievements'
 import Confirmation from './Confirmation'
 import Success from './Success'
 
+import '../style.css'
+
 class MainForm extends Component {
     state = {
         step: 1,

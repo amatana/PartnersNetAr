@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import '../style.css'
+
 
 class Achievements extends Component{
     saveAndContinue= (e)=>{
@@ -27,9 +27,9 @@ class Achievements extends Component{
         return(
         <div>
                
-            <h1 style={style.bienvenido}>Genial!</h1>
-            <p style={style.name}>Tenes Proyecto</p>
-            <p style={style.conocernos}>Selecciona tus logros</p>
+            <h1 className="achievBienvenido">Genial!</h1>
+            <p className="achievName">Tenes Proyecto</p>
+            <p className="achievConocernos">Selecciona tus logros</p>
         
             <form action="">
             <div className="two-colums">
