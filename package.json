@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./back/server.js",
+    "start": "webpack -w & nodemon ./back/server.js",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -35,10 +35,18 @@
     "pg": "^7.11.0",
     "pg-hstore": "^2.3.3",
     "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
     "sequelize": "^5.9.3"
   },
   "devDependencies": {
-    "webpack": "^4.35.2"
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.6",
+    "babel-loader": "^8.0.6",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0"
   }
 }

@@ -6,7 +6,6 @@ router.post('/crearUsuario', function (req, res) {
     User.create({
         email: Math.random() + "@gmail.com",
         password: '123456',
-        email: 'amatandfgha975@gmail.com',
         linkedIn: 'ana-amat'
     }).then(user => {
         res.send(user)

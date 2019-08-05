@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './front/src/index.js',
+  entry: './front/index.js',
   output: {
     path: __dirname,
     filename: './back/public/bundle.js'
