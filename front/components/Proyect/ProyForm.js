@@ -1,16 +1,7 @@
-import React,{Component} from 'react'
-import EmailDetails from './EmailDetails'
-import UserDetails from './UserDetails'
-import AccountDetails from './AccountsDetails'
-import PitchDetails from './PitchDetails.js'
-import BioDetails from './BioDetails'
-import TypeDetails from './TypeDetails'
-import PersonalDetails from './PersonalDetails.js'
-import Achievements from './Achievements'
-import Confirmation from './Confirmation'
-import Success from './Success'
 
-import '../style.css'
+
+import '../../../back/public/style.css'
+
 
 class MainForm extends Component {
     state = {
