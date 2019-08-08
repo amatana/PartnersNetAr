@@ -1,33 +1,32 @@
-
+import React, {Component} from 'react'
+import Achievements from './Achievements'
+import NameProy from './NameProy'
+import ImageProy from './ImageProy'
+import InfoProy from './InfoProy'
+import HaveProy from './HaveProy'
+import NeedProy from './NeedProy'
+import PhraseProy from './PhraseProy'
+import PitchProy from './PitchProy'
+import TeamProy from './TeamProy'
+import TypeProy from './TypeProy'
+import Confirmation from './ConfirmationProy'
 
 import '../../../back/public/style.css'
 
 
 class MainForm extends Component {
     state = {
-        step: 1,
-        email:'',
-        user:'',
-        account:'',
-        pitch:'',
-        bio:'',
-        type:'',
-        interesting: [],
-        achievements: [] 
-    }
-
-    withoutProyect=()=>{
-        const {step}=this.state
-        this.setState({
-            step: step + 2 
-        })
-    }
-
-    backWithoutProyect=()=>{
-        const {step}=this.state
-        this.setState({
-            step: step - 2 
-        })
+        step: 0,
+        achievements:[],
+        nameProy:'',
+        typeProy:'',
+        infoProy:'',
+        imageProy:'',
+        phraseProy:'',
+        pitchProy:'',
+        haveProy: '',
+        needProy: '',
+        teamProy:[],
     }
 
     nextStep=()=>{
@@ -64,7 +63,7 @@ class MainForm extends Component {
 
     handleInterest = input =>{
         const int = input.value
-        const list = this.state.interesting
+        const list = this.state.teamProy
         list.push(int)
         this.forceUpdate ()
         console.log(this.state)
@@ -72,76 +71,87 @@ class MainForm extends Component {
 
     render(){
         const {step}=this.state
-        const { email,user,account,pitch,bio,type,interesting,achievements } = this.state
-        const values = {email,user,account,pitch,bio,type,interesting,achievements}
+        const { achievements,nameProy,typeProy,infoProy,pitchProy,imageProy,phraseProy,haveProy,needProy,teamProy } = this.state
+        const values = {achievements,nameProy,typeProy,infoProy,pitchProy,imageProy,phraseProy,haveProy,needProy,teamProy}
         switch(step){
-            case 1:
-                return( <EmailDetails
+            case 0: 
+            return( <Achievements
+            nextStep={this.nextStep}
+            handleChange = {this.handleChange}
+            values = {values}
+            />)
+            case 1: 
+                return( <NameProy
                 nextStep={this.nextStep}
                 handleChange = {this.handleChange}
                 values = {values}
                 />)
             case 2:
-                return (<UserDetails
+                return (<TypeProy
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 handleChange = {this.handleChange}
                 values = {values}
                 />)
             case 3:
-                return (<AccountDetails
+                return (<InfoProy
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 handleChange = {this.handleChange}
                 values = {values}
                 />)
             case 4:
-                return (<PitchDetails
+                return (<ImageProy
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 handleChange = {this.handleChange}
                 values = {values}
                 />)
             case 5:
-                return (<BioDetails
+                return (<PhraseProy
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 handleChange = {this.handleChange}
                 values = {values}
                 />)
             case 6:
-                return (<TypeDetails
+                return (<PitchProy
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 handleChange = {this.handleChange}
                 values = {values}
                 />)
             case 7:
-                return( <PersonalDetails
+                return( <HaveProy
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 handleChange = {this.handleChange}
                 withoutProyect = {this.withoutProyect}
-                handleInterest = {this.handleInterest}
+                
                 values = {values}
                 />)
 
             case 8:
-                return (<Achievements
+                return (<NeedProy
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 handleChange = {this.handleChange}
                 values = {values}
                 />)
             case 9:
-                return (<Confirmation
+                return (<TeamProy
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
-                withoutProyect = {this.backWithoutProyect}
+                handleInterest = {this.handleInterest}
                 values = {values}
                 />)
             case 10:
-                return( <Success/>)
+                return (<Confirmation
+                    nextStep={this.nextStep}
+                    prevStep={this.prevStep}
+                    withoutProyect = {this.backWithoutProyect}
+                    values = {values}
+                    />)
             default : 
             return null
         }

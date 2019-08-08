@@ -4,11 +4,8 @@ import Felicitaciones from './Felicitaciones';
 class ImageProy extends Component{
     saveAndContinue= (e)=>{
         e.preventDefault()
-        if(!(this.props.values.type==='tengo mi proyecto')){
-            this.props.withoutProyect()
-        }else{
         this.props.nextStep()
-        }
+        
     }
     back = (e)=>{
         e.preventDefault()
@@ -24,15 +21,15 @@ class ImageProy extends Component{
 
     render(){
         const {values}=this.props
-        const interest =values.interesting
+    //     const interest =values.interesting
 
-        const list = interest.map((interest,i)=>{
-            return(
-            <div key={i} className="boxList">
-            <p className="textList"
-            >{interest}</p>
-            </div>)
-       })
+    //     const list = interest.map((interest,i)=>{
+    //         return(
+    //         <div key={i} className="boxList">
+    //         <p className="textList"
+    //         >{interest}</p>
+    //         </div>)
+    //    })
 
         return(
         <div>
@@ -47,7 +44,7 @@ class ImageProy extends Component{
                 <button className="saveInterest" onClick={this.save}></button>
 
                 <br/>
-                {list}
+                {/* {list} */}
                 
                 
 

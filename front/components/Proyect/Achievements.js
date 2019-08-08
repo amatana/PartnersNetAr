@@ -27,9 +27,9 @@ class Achievements extends Component{
         return(
         <div>
                
-            <h1 className="achievBienvenido">Genial!</h1>
-            <p className="achievName">Tenes Proyecto</p>
-            <p className="achievConocernos">Selecciona tus logros</p>
+            <h1 className="bienvenido">Genial!</h1>
+            <p className="name">Tenes Proyecto</p>
+            <p className="conocernos">Selecciona tus logros</p>
         
             <form action="">
             <div className="two-colums">

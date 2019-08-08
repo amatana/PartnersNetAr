@@ -4,11 +4,7 @@ import Felicitaciones from './Felicitaciones';
 class TeamProy extends Component{
     saveAndContinue= (e)=>{
         e.preventDefault()
-        if(!(this.props.values.type==='tengo mi proyecto')){
-            this.props.withoutProyect()
-        }else{
         this.props.nextStep()
-        }
     }
     back = (e)=>{
         e.preventDefault()
@@ -24,13 +20,13 @@ class TeamProy extends Component{
 
     render(){
         const {values}=this.props
-        const interest =values.interesting
+        const teamProy =values.teamProy
 
-        const list = interest.map((interest,i)=>{
+        const list = teamProy.map((team,i)=>{
             return(
             <div key={i} className="boxList">
             <p className="textList"
-            >{interest}</p>
+            >{team}</p>
             </div>)
        })
 
@@ -43,7 +39,7 @@ class TeamProy extends Component{
                 className="input"
                 id="inpInt"
                 type="text"
-                defaultValue={values.interesting}/>
+                defaultValue={values.teamProy}/>
                 <button className="saveInterest" onClick={this.save}></button>
 
                 <br/>
