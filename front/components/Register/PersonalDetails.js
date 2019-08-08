@@ -4,11 +4,7 @@ import Welcome from './Welcome';
 class PersonalDetails extends Component{
     saveAndContinue= (e)=>{
         e.preventDefault()
-        if(!(this.props.values.type==='tengo mi proyecto')){
-            this.props.withoutProyect()
-        }else{
         this.props.nextStep()
-        }
     }
     back = (e)=>{
         e.preventDefault()

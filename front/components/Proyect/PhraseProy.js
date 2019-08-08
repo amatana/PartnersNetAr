@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Welcome from './Welcome'
+import Felicitaciones from './Felicitaciones';
 
 class PhraseProy extends Component{
     saveAndContinue = (e)=>{
@@ -18,7 +18,7 @@ class PhraseProy extends Component{
         
         return(
         <div>
-            <Welcome/>
+            <Felicitaciones/>
             <form action="">
                 <p className="pregunta">5. Contanos tu proyecto en una frase</p>
                 <input
@@ -26,7 +26,7 @@ class PhraseProy extends Component{
                 
                 type="text"
                 
-                onChange={this.props.handleChange('email')}
+                onChange={this.props.handleChange('phraseProy')}
                 defaultValue={values.email} />
                 <div>
                     <button className="back" onClick={this.back} >Ver pregunta anterior</button>

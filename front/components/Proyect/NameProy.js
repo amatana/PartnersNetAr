@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Welcome from './Welcome'
+
 
 class NameProy extends Component{
     saveAndContinue = (e)=>{
@@ -12,7 +12,10 @@ class NameProy extends Component{
         
         return(
         <div>
-            <Welcome/>
+            <h1 className="bienvenido">Ahora</h1>
+            <p className="name">Contanos un poco mas</p>
+            <p className="conocernos">Contanos de que se trata para que la comunidad pueda colaborar</p>
+
             <form action="">
                 <p className="pregunta">1. Nombre del proyecto</p>
                 <input
@@ -20,7 +23,7 @@ class NameProy extends Component{
                 
                 type="text"
                 
-                onChange={this.props.handleChange('email')}
+                onChange={this.props.handleChange('nameProy')}
                 defaultValue={values.email} />
                 <div>
                     <button className="continuar" onClick={this.saveAndContinue}>Siguiente Pregunta</button>

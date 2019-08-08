@@ -23,7 +23,6 @@ class AccountDetails extends Component{
                 <p className="pregunta">3. Linkedin</p>
                 <input 
                 className="input"
-                
                 type="text"
                 onChange={this.props.handleChange('account')}
                 defaultValue={values.account} />

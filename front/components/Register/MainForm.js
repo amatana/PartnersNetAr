@@ -6,7 +6,6 @@ import PitchDetails from './PitchDetails.js'
 import BioDetails from './BioDetails'
 import TypeDetails from './TypeDetails'
 import PersonalDetails from './PersonalDetails.js'
-import Achievements from './Achievements'
 import Confirmation from './Confirmation'
 import Success from './Success'
 
@@ -56,10 +55,6 @@ class MainForm extends Component {
     handleChange = input => event =>{
         if(event.target.type !== 'checkbox'){
         this.setState({[input]:event.target.value})
-        }else{
-            const item = event.target.name;
-            const achiev = this.state.achievements
-            achiev.push(item)
         }
         if(input === 'type'){
             const {step}=this.state
@@ -81,8 +76,8 @@ class MainForm extends Component {
 
     render(){
         const {step}=this.state
-        const { email,user,account,pitch,bio,type,interesting,achievements } = this.state
-        const values = {email,user,account,pitch,bio,type,interesting,achievements}
+        const { email,user,account,pitch,bio,type,interesting } = this.state
+        const values = {email,user,account,pitch,bio,type,interesting}
         switch(step){
             case 1:
                 return( <EmailDetails
@@ -130,26 +125,16 @@ class MainForm extends Component {
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 handleChange = {this.handleChange}
-                withoutProyect = {this.withoutProyect}
                 handleInterest = {this.handleInterest}
                 values = {values}
                 />)
-
             case 8:
-                return (<Achievements
-                nextStep={this.nextStep}
-                prevStep={this.prevStep}
-                handleChange = {this.handleChange}
-                values = {values}
-                />)
-            case 9:
                 return (<Confirmation
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
-                withoutProyect = {this.backWithoutProyect}
                 values = {values}
                 />)
-            case 10:
+            case 9:
                 return( <Success/>)
             default : 
             return null
