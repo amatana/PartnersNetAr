@@ -14,7 +14,7 @@ import Confirmation from './ConfirmationProy'
 import '../../../back/public/style.css'
 
 
-class MainForm extends Component {
+class MainProy extends Component {
     state = {
         step: 0,
         achievements:[],
@@ -159,4 +159,4 @@ class MainForm extends Component {
 
 }
 
-export default MainForm
+export default MainProy
