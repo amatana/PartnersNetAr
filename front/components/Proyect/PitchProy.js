@@ -13,10 +13,12 @@ class ImageProy extends Component{
     }
 
     save=(e)=>{
-        e.preventDefault()
-        const input= document.getElementById('inpInt')
-        this.props.handleInterest(input)
-        input.value= ''
+        // e.preventDefault()
+        const input= document.getElementById('fileUpload')
+        //this.props.handleInterest(input)
+        // input.value= ''
+        const div = document.getElementById('value')
+        div.innerHTML=input.files[0].name
     }
 
     render(){
@@ -37,11 +39,17 @@ class ImageProy extends Component{
             <form>
                 <p className="pregunta">6. Subi tu pitch</p>
                 <input 
-                className="input"
-                id="inpInt"
+                className="inputFile"
+                id="fileUpload"
                 type="file"
-                defaultValue={values.interesting}/>
-                <button className="saveInterest" onClick={this.save}></button>
+                accept="audio/*"
+                onChange={this.save}
+                defaultValue={values.pitchProy}/>
+                
+                <div id="value" className="subir">
+                </div>
+                <label htmlFor="fileUpload" className="saveInterest"></label>
+                {/* <button className="saveInterest" onClick={this.save}></button> */}
 
                 <br/>
                 {/* {list} */}
