@@ -104,10 +104,10 @@ line-height: 36px;
     margin:0.5em
 }
 
-.achievBienvenido{font-Family: "Avenir Next";	color: "#044087"}
-.achievName{height: 80px;	width: 446px;font-Family: "Avenir Next";	font-Size: 36px;
+.bienvenido{font-Family: "Avenir Next";	color: #044087}
+.name{height: 80px;	width: 446px;font-Family: "Avenir Next";	font-Size: 36px;
     line-Height: 40px;	 font-Weight: 600; color: #EF4166;}
-.achievConocernos{height: 20px;	width: 469px;	color: #044087;	font-Family: "Avenir Next";	font-Size: 14px;	line-Height: 20px;}
+.conocernos{height: 20px;	width: 469px;	color: #044087;	font-Family: "Avenir Next";	font-Size: 14px;	line-Height: 20px;}
 
 
 .continuar{
@@ -267,4 +267,26 @@ option[selected]{
     font-family: FontAwesome;
     content: '\f164';
     background-color: transparent;
+}
+
+.inputFile{
+    height: 45px;
+    width: 331px;
+    background-color: #FBFBFF;
+    box-shadow: 0 2px 10px 0 #EDEDED;
+    border: transparent;
+    display: none
+}
+
+.subir{
+    height: 45px;
+    width: 331px;
+    background-color: #FBFBFF;
+    box-shadow: 0 2px 10px 0 #EDEDED;
+    border: transparent;
+    text-align: center;
+    display: inline-block;
+    font-family: "Helvetica";
+    color: #044087;
+    font-size: 14px
 }
