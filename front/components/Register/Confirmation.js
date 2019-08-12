@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 
 class Confirmation extends Component{
     saveAndContinue= (e)=>{
@@ -37,7 +38,8 @@ class Confirmation extends Component{
                 </ul>
                 <div>
                     <button className="back" onClick={this.back}>Back</button>
-                    <button onClick={this.saveAndContinue} >Confirmation</button>
+                    {/* <button onClick={this.saveAndContinue} >Confirmation</button> */}
+                    <button > <Link to="/proyect"></Link> Confirmation</button>
                 </div>
             </div>
         )
