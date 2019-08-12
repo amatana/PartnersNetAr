@@ -43,7 +43,7 @@ render(){
             style={style.rectangleComenzar}
             ><p 
             style={style.comenzar}
-            >Comenzar</p> </button>
+            >Comenzar</p><Link to="/register"></Link> </button>
 
         </div>
         )
