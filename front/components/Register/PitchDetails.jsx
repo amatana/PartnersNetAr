@@ -9,12 +9,12 @@ class PitchDetails extends Component{
         this.back = this.back.bind(this)
       } 
     
-    saveAndContinue= (e)=>{
+    saveAndContinue(e){
         e.preventDefault()
         this.props.nextStep()
     }
 
-    back = (e)=>{
+    back(e){
         e.preventDefault()
         this.props.prevStep()
     }
