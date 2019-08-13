@@ -2,7 +2,14 @@ import React, {Component} from 'react'
 import Welcome from './Welcome'
 
 class EmailDetails extends Component{
-    saveAndContinue = (e)=>{
+    constructor(props){
+        super(props)
+   
+        this.saveAndContinue = this.saveAndContinue.bind(this)
+      } 
+   
+    
+    saveAndContinue(e){
         e.preventDefault()
         this.props.nextStep()
     }

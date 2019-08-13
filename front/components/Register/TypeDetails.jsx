@@ -2,17 +2,25 @@ import React,{Component} from 'react'
 import Welcome from './Welcome'
 
 class TypeDetails extends Component{
-    saveAndContinue = (e)=>{
+    constructor(props){
+        super(props)
+   
+        this.saveAndContinue = this.saveAndContinue.bind(this)
+        this.back = this.back.bind(this)
+        this.changeButton = this.changeButton.bind(this)
+      } 
+
+    saveAndContinue(e){
         e.preventDefault()
         this.props.nextStep()
     }
 
-    back = (e)=>{
+    back(e){
         e.preventDefault()
         this.props.prevStep()
     }
 
-    changeButton = event =>{
+    changeButton(event){
         let bgColor = event.target.style.backgroundColor
             
             if(bgColor !== "#EF4166"){
