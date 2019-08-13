@@ -30,7 +30,8 @@ render(){
             <textarea 
             className="textarea"
             type="text"
-            onChange={this.props.handleChange('bio')}
+            name='bio'
+            onChange={this.props.handleChange}
             defaultValue={values.bio}/> 
             <div>
                 <button className="back" onClick={this.back} >Ver pregunta anterior</button>

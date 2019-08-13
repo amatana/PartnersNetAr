@@ -31,7 +31,8 @@ class AccountDetails extends Component{
                 <input 
                 className="input"
                 type="text"
-                onChange={this.props.handleChange('account')}
+                name='account'
+                onChange={this.props.handleChange}
                 defaultValue={values.account} />
                 
                 <div>
