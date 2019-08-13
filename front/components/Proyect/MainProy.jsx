@@ -15,35 +15,43 @@ import '../../../back/public/style.css'
 
 
 class MainProy extends Component {
-    state = {
-        step: 0,
-        achievements:[],
-        nameProy:'',
-        typeProy:'',
-        infoProy:'',
-        imageProy:'',
-        phraseProy:'',
-        pitchProy:'',
-        haveProy: '',
-        needProy: '',
-        teamProy:[],
+    constructor(props){
+        super(props)
+        this.state = {
+            step: 0,
+            achievements:[],
+            nameProy:'',
+            typeProy:'',
+            infoProy:'',
+            imageProy:'',
+            phraseProy:'',
+            pitchProy:'',
+            haveProy: '',
+            needProy: '',
+            teamProy:[],
+        } 
+
+        this.nextStep = this.nextStep.bind(this)
+        this.prevStep = this.prevStep.bind(this)
+        this.handleInterest = this.handleInterest.bind(this)
+        
     }
 
-    nextStep=()=>{
+    nextStep(){
         const {step}=this.state
         this.setState({
             step: step + 1 
         })
         console.log(this.state)
     }
-    prevStep=()=>{
+    prevStep(){
         const {step}=this.state
         this.setState({
             step: step - 1 
         })
     }
 
-    handleChange = input => event =>{
+    handleChange(input,event){
         if(event.target.type !== 'checkbox'){
         this.setState({[input]:event.target.value})
         }else{
@@ -61,7 +69,7 @@ class MainProy extends Component {
     }
 
 
-    handleInterest = input =>{
+    handleInterest(input){
         const int = input.value
         const list = this.state.teamProy
         list.push(int)

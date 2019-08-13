@@ -2,10 +2,18 @@ import React, {Component} from 'react'
 
 
 class NameProy extends Component{
-    saveAndContinue = (e)=>{
+    constructor(props){
+        super(props)
+
+        this.saveAndContinue = this.saveAndContinue.bind(this)
+    }
+
+    saveAndContinue(e){
         e.preventDefault()
         this.props.nextStep()
+        
     }
+
 
     render(){
         const {values}=this.props
