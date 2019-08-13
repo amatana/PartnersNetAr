@@ -9,7 +9,7 @@ sequelize.authenticate()
     console.log('Connection with DB has been established successfully.');
   })
   .catch(err => {
-    console.error('ACA ME ROMPOUnable to connect to the database:', err);
+    console.error('Unable to connect to the database:', err);
   });
 
 module.exports = sequelize;
