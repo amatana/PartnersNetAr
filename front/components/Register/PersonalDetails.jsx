@@ -2,16 +2,25 @@ import React, {Component} from 'react'
 import Welcome from './Welcome';
 
 class PersonalDetails extends Component{
-    saveAndContinue= (e)=>{
+    constructor(props){
+        super(props)
+   
+        this.saveAndContinue = this.saveAndContinue.bind(this)
+        this.back = this.back.bind(this)
+        this.save = this.save.bind(this)
+      } 
+   
+    
+    saveAndContinue(e){
         e.preventDefault()
         this.props.nextStep()
     }
-    back = (e)=>{
+    back(e){
         e.preventDefault()
         this.props.prevStep()
     }
 
-    save=(e)=>{
+    save(e){
         e.preventDefault()
         const input= document.getElementById('inpInt')
         this.props.handleInterest(input)
