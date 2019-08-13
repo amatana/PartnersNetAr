@@ -2,12 +2,19 @@ import React, {Component} from 'react'
 
 
 class Achievements extends Component{
-    saveAndContinue= (e)=>{
+    constructor(props){
+        super(props)
+
+        this.saveAndContinue = this.saveAndContinue.bind(this)
+        this.back = this.back.bind(this)
+    }
+
+    saveAndContinue(e){
         e.preventDefault()
         this.props.nextStep()
         
     }
-    back=(e)=>{
+    back(e){
         e.preventDefault()
         this.props.prevStep()
     }
