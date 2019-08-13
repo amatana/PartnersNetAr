@@ -11,11 +11,13 @@ class Confirmation extends Component{
     saveAndContinue(e){
         e.preventDefault()
         this.props.nextStep()
+        
     }
     back(e){
         e.preventDefault()
         this.props.prevStep()
     }
+
 
     render(){
         const {values:{achievements,nameProy,typeProy,infoProy,pitchProy,imageProy,phraseProy,haveProy,needProy,teamProy}}=this.props

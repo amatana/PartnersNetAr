@@ -5,12 +5,13 @@ class HaveProy extends Component{
     saveAndContinue(e){
         e.preventDefault()
         this.props.nextStep()
+        
     }
-
     back(e){
         e.preventDefault()
         this.props.prevStep()
     }
+
 
 render(){
     const {values} = this.props
