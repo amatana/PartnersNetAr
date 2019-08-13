@@ -48,7 +48,7 @@ class Confirmation extends Component{
                 <div>
                     <button className="back" onClick={this.back}>Back</button>
                     {/* <button onClick={this.saveAndContinue} >Confirmation</button> */}
-                    <button > <Link to="/proyect"></Link> Confirmation</button>
+                    <Link to="/proyect"> <button >  Confirmation</button></Link>
                 </div>
             </div>
         )
