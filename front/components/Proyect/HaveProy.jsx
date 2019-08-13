@@ -2,13 +2,6 @@ import React, {Component} from 'react'
 import Felicitaciones from './Felicitaciones';
 
 class HaveProy extends Component{
-    constructor(props){
-        super(props)
-
-        this.saveAndContinue = this.saveAndContinue.bind(this)
-        this.back = this.back.bind(this)
-    }
-
     saveAndContinue(e){
         e.preventDefault()
         this.props.nextStep()
