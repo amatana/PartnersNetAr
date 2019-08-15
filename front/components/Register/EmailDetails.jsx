@@ -26,8 +26,8 @@ class EmailDetails extends Component{
                 className="input" 
                 
                 type="text"
-                
-                onChange={this.props.handleChange('email')}
+                name='email'
+                onChange={this.props.handleChange}
                 defaultValue={values.email} />
                 <div>
                     <button className="continuar" onClick={this.saveAndContinue}>Siguiente Pregunta</button>

@@ -31,7 +31,8 @@ class UserDetails extends Component{
                 <input 
                 className="input"
                 type="text"
-                onChange={this.props.handleChange('user')}
+                name='user'
+                onChange={this.props.handleChange}
                 defaultValue={values.user} />
                 <div>
                     <button className="back" onClick={this.back} >Ver pregunta anterior</button>

@@ -40,30 +40,44 @@ class TypeDetails extends Component{
             <Welcome/>
             <form>
                 <p className="pregunta">3. Qué tipo de emprendedor sos?</p>
-                <option name="tengo mi proyecto" 
+
+                <input 
+                type='button'
                 className="typeButton"
                 onTouchStart={this.changeButton}
                 onMouseDown={this.changeButton}
-                onClick={this.props.handleChange('type')}
-                >tengo mi proyecto</option><br/>
-                <option name="Quiero colaborar en un proyecto" 
+                name='type'
+                value='TP'
+                onClick={this.props.handleChange}
+                >tengo mi proyecto</input><br/>
+                <input  
                 className="typeButton"
                 onTouchStart={this.changeButton}
                 onMouseDown={this.changeButton}
-                onClick={this.props.handleChange('type')}
-                >Quiero colaborar en un proyecto</option><br/>
-                <option name="soy una organizacion" 
+                name='type'
+                type='button'
+                value='QC'
+                onClick={this.props.handleChange}
+                >Quiero colaborar en un proyecto</input><br/>
+                <input 
+                type='button'
                 className="typeButton"
                 onTouchStart={this.changeButton}
                 onMouseDown={this.changeButton}
-                onClick={this.props.handleChange('type')}
-                >soy una organizacion</option><br/>
-                <option name="soy un inversor" 
+                name='type'
+                value='ORG'
+                onClick={this.props.handleChange}
+                >soy una organizacion</input><br/>
+                <input  
+                type='button'
                 className="typeButton"
                 onTouchStart={this.changeButton}
                 onMouseDown={this.changeButton}
-                onClick={this.props.handleChange('type')}
-                >soy un inversor</option><br/>
+                name='type'
+                value='INV'
+                onClick={this.props.handleChange}
+                >soy un inversor</input><br/>
+                
                 <div>
                     <button className="back" onClick={this.back} >Ver pregunta Anterior</button>
                 </div>
