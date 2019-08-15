@@ -24,7 +24,6 @@ class MainForm extends Component {
             bio:'',
             type:'',
             interesting: [],
-            achievements: [] 
         }
         this.withoutProyect=this.withoutProyect.bind(this)
         this.backWithoutProyect = this.backWithoutProyect.bind(this)

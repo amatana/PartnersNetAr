@@ -86,7 +86,7 @@ class Achievements extends Component{
                             <label className="checkboxes" htmlFor="expandir">Busco expandirme</label> <br/>
                 </div>
                 <div>
-                    <button className="back" onClick={this.back} >Ver pregunta anterior</button>
+                    {/* <button className="back" onClick={this.back} >Ver pregunta anterior</button> */}
                     <button className="continuar" onClick={this.saveAndContinue} >Siguiente Pregunta</button>
                 </div>
             </form>
