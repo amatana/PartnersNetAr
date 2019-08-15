@@ -1,13 +1,20 @@
 import React, {Component} from 'react'
-import Felicitaciones from './Felicitaciones'
+import Felicitaciones from './Felicitaciones';
 
-class TypeProy extends Component{
-    saveAndContinue = (e)=>{
-        e.preventDefault()
-        this.props.nextStep()
+class PhraseProy extends Component{
+    constructor(props){
+        super(props)
+
+        this.saveAndContinue = this.saveAndContinue.bind(this)
+        this.back = this.back.bind(this)
     }
 
-    back = (e)=>{
+    saveAndContinue(e){
+        e.preventDefault()
+        this.props.nextStep()
+        
+    }
+    back(e){
         e.preventDefault()
         this.props.prevStep()
     }
@@ -20,16 +27,18 @@ class TypeProy extends Component{
         <div>
             <Felicitaciones/>
             <form action="">
-                <p  className="pregunta">2. Tipo de proyecto</p>
-                <input 
-                className="input"
+                <p className="pregunta">5. Contanos tu proyecto en una frase</p>
+                <input
+                className="input" 
+                
                 type="text"
-                onChange={this.props.handleChange('typeProy')}
-                defaultValue={values.user} />
+                
+                onChange={this.props.handleChange('phraseProy')}
+                defaultValue={values.email} />
                 <div>
                     <button className="back" onClick={this.back} >Ver pregunta anterior</button>
                     <button className="continuar" onClick={this.saveAndContinue}>Siguiente Pregunta</button>
-               </div>
+                </div>
             </form>
         </div>
         )
@@ -38,4 +47,4 @@ class TypeProy extends Component{
     }
 }
 
-export default TypeProy
+export default PhraseProy

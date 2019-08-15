@@ -1,13 +1,20 @@
 import React, {Component} from 'react'
 import Felicitaciones from './Felicitaciones';
 
-class PitchDetails extends Component{
-    saveAndContinue= (e)=>{
-        e.preventDefault()
-        this.props.nextStep()
+class NeedProy extends Component{
+    constructor(props){
+        super(props)
+
+        this.saveAndContinue = this.saveAndContinue.bind(this)
+        this.back = this.back.bind(this)
     }
 
-    back = (e)=>{
+    saveAndContinue(e){
+        e.preventDefault()
+        this.props.nextStep()
+        
+    }
+    back(e){
         e.preventDefault()
         this.props.prevStep()
     }
@@ -19,11 +26,11 @@ render(){
     <div>
         <Felicitaciones/>
         <form action="">
-            <p className="pregunta">3. De que se trata *nombre del proyecto*? </p>
+            <p className="pregunta">8. Enumera los “necesito” del proyecto hasta ahora</p>
             <textarea 
             className="textarea"
             type="text"
-            onChange={this.props.handleChange('infoProy')}
+            onChange={this.props.handleChange('needProy')}
             defaultValue={values.pitch}/> 
             <div>
                 <button className="back" onClick={this.back} >Ver pregunta anterior</button>
@@ -36,4 +43,4 @@ render(){
 }
 }
 
-export default PitchDetails
+export default NeedProy

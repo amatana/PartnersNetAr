@@ -2,57 +2,65 @@ import React,{Component} from 'react'
 import EmailDetails from './EmailDetails'
 import UserDetails from './UserDetails'
 import AccountDetails from './AccountsDetails'
-import PitchDetails from './PitchDetails.js'
+import PitchDetails from './PitchDetails'
 import BioDetails from './BioDetails'
 import TypeDetails from './TypeDetails'
-import PersonalDetails from './PersonalDetails.js'
+import PersonalDetails from './PersonalDetails'
 import Confirmation from './Confirmation'
 import Success from './Success'
 
 import '../../../back/public/style.css'
 
 class MainForm extends Component {
-    state = {
-        step: 1,
-        email:'',
-        user:'',
-        account:'',
-        pitch:'',
-        bio:'',
-        type:'',
-        interesting: [],
-        achievements: [] 
-    }
+    constructor(props){
+        super(props)
 
-    withoutProyect=()=>{
+        this.state = {
+            step: 1,
+            email:'',
+            user:'',
+            account:'',
+            pitch:'',
+            bio:'',
+            type:'',
+            interesting: [],
+            achievements: [] 
+        }
+        this.withoutProyect=this.withoutProyect.bind(this)
+        this.backWithoutProyect = this.backWithoutProyect.bind(this)
+        this.nextStep = this.nextStep.bind(this)
+        this.prevStep = this.prevStep.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+        this.handleInterest = this.handleInterest.bind(this)
+    }
+    withoutProyect(){
         const {step}=this.state
         this.setState({
             step: step + 2 
         })
     }
 
-    backWithoutProyect=()=>{
+    backWithoutProyect(){
         const {step}=this.state
         this.setState({
             step: step - 2 
         })
     }
 
-    nextStep=()=>{
+    nextStep(){
         const {step}=this.state
         this.setState({
             step: step + 1 
         })
-        console.log(this.state)
     }
-    prevStep=()=>{
+    prevStep(){
         const {step}=this.state
         this.setState({
             step: step - 1 
         })
     }
 
-    handleChange = input => event =>{
+    handleChange(input,event){
         if(event.target.type !== 'checkbox'){
         this.setState({[input]:event.target.value})
         }
@@ -66,7 +74,7 @@ class MainForm extends Component {
     }
 
 
-    handleInterest = input =>{
+    handleInterest(input){
         const int = input.value
         const list = this.state.interesting
         list.push(int)

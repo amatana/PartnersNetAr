@@ -2,15 +2,16 @@ import React, {Component} from 'react'
 import Felicitaciones from './Felicitaciones';
 
 class HaveProy extends Component{
-    saveAndContinue= (e)=>{
+    saveAndContinue(e){
         e.preventDefault()
         this.props.nextStep()
+        
     }
-
-    back = (e)=>{
+    back(e){
         e.preventDefault()
         this.props.prevStep()
     }
+
 
 render(){
     const {values} = this.props

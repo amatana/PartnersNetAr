@@ -38,12 +38,12 @@ render(){
                 Tenes una idea, una pregunta, algo para compartir?
 
                 Este es tu lugar, bienvenido a esta comunidad!</p>
-
+            <Link to="/register">
             <button className="rectangle-2-copy-2" 
             style={style.rectangleComenzar}
             ><p 
             style={style.comenzar}
-            >Comenzar</p><Link to="/register"></Link> </button>
+            >Comenzar</p></button></Link> 
 
         </div>
         )

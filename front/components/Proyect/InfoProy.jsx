@@ -1,30 +1,38 @@
 import React, {Component} from 'react'
-import Welcome from './Welcome';
+import Felicitaciones from './Felicitaciones';
 
-class BioDetails extends Component{
-    saveAndContinue= (e)=>{
-        e.preventDefault()
-        this.props.nextStep()
+class PitchDetails extends Component{
+    constructor(props){
+        super(props)
+
+        this.saveAndContinue = this.saveAndContinue.bind(this)
+        this.back = this.back.bind(this)
     }
 
-    back = (e)=>{
+    saveAndContinue(e){
+        e.preventDefault()
+        this.props.nextStep()
+        
+    }
+    back(e){
         e.preventDefault()
         this.props.prevStep()
     }
+
 
 render(){
     const {values} = this.props
     
     return (
     <div>
-        <Welcome/>
+        <Felicitaciones/>
         <form action="">
-            <p className="pregunta">5. Contanos un poco sobre vos </p>
+            <p className="pregunta">3. De que se trata *nombre del proyecto*? </p>
             <textarea 
             className="textarea"
             type="text"
-            onChange={this.props.handleChange('bio')}
-            defaultValue={values.bio}/> 
+            onChange={this.props.handleChange('infoProy')}
+            defaultValue={values.pitch}/> 
             <div>
                 <button className="back" onClick={this.back} >Ver pregunta anterior</button>
                 <button className="continuar" onClick={this.saveAndContinue} >Siguiente pregunta</button>
@@ -36,4 +44,4 @@ render(){
 }
 }
 
-export default BioDetails
+export default PitchDetails

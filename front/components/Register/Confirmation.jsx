@@ -2,11 +2,20 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 
 class Confirmation extends Component{
-    saveAndContinue= (e)=>{
+
+    constructor(props){
+        super(props)
+   
+        this.saveAndContinue = this.saveAndContinue.bind(this)
+        this.back = this.back.bind(this)
+      } 
+   
+
+    saveAndContinue(e){
         e.preventDefault()
         this.props.nextStep()
     }
-    back=(e)=>{
+    back(e){
         e.preventDefault()
         this.props.prevStep()
     }
@@ -39,7 +48,7 @@ class Confirmation extends Component{
                 <div>
                     <button className="back" onClick={this.back}>Back</button>
                     {/* <button onClick={this.saveAndContinue} >Confirmation</button> */}
-                    <button > <Link to="/proyect"></Link> Confirmation</button>
+                    <Link to="/proyect"> <button >  Confirmation</button></Link>
                 </div>
             </div>
         )

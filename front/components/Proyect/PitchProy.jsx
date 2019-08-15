@@ -2,17 +2,26 @@ import React, {Component} from 'react'
 import Felicitaciones from './Felicitaciones';
 
 class ImageProy extends Component{
-    saveAndContinue= (e)=>{
+    constructor(props){
+        super(props)
+
+        this.saveAndContinue = this.saveAndContinue.bind(this)
+        this.back = this.back.bind(this)
+        this.save = this.save.bind(this)
+    }
+
+    saveAndContinue(e){
         e.preventDefault()
         this.props.nextStep()
         
     }
-    back = (e)=>{
+    back(e){
         e.preventDefault()
         this.props.prevStep()
     }
 
-    save=(e)=>{
+
+    save(e){
         // e.preventDefault()
         const input= document.getElementById('fileUpload')
         //this.props.handleInterest(input)
@@ -37,20 +46,20 @@ class ImageProy extends Component{
         <div>
             <Felicitaciones/>
             <form>
-                <p className="pregunta">4. Subi una imagen</p>
+                <p className="pregunta">6. Subi tu pitch</p>
                 <input 
                 className="inputFile"
                 id="fileUpload"
                 type="file"
-                accept="image/*"
+                accept="audio/*"
                 onChange={this.save}
-                defaultValue={values.imageProy}/>
+                defaultValue={values.pitchProy}/>
                 
                 <div id="value" className="subir">
                 </div>
                 <label htmlFor="fileUpload" className="saveInterest"></label>
                 {/* <button className="saveInterest" onClick={this.save}></button> */}
-                
+
                 <br/>
                 {/* {list} */}
                 

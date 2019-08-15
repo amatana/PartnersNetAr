@@ -1,13 +1,20 @@
 import React, {Component} from 'react'
-import Welcome from './Welcome'
+import Felicitaciones from './Felicitaciones'
 
-class UserDetails extends Component{
-    saveAndContinue = (e)=>{
-        e.preventDefault()
-        this.props.nextStep()
+class TypeProy extends Component{
+    constructor(props){
+        super(props)
+
+        this.saveAndContinue = this.saveAndContinue.bind(this)
+        this.back = this.back.bind(this)
     }
 
-    back = (e)=>{
+    saveAndContinue(e){
+        e.preventDefault()
+        this.props.nextStep()
+        
+    }
+    back(e){
         e.preventDefault()
         this.props.prevStep()
     }
@@ -18,13 +25,13 @@ class UserDetails extends Component{
         
         return(
         <div>
-            <Welcome/>
+            <Felicitaciones/>
             <form action="">
-                <p  className="pregunta">2. Coloca tu nombre de usuario</p>
+                <p  className="pregunta">2. Tipo de proyecto</p>
                 <input 
                 className="input"
                 type="text"
-                onChange={this.props.handleChange('user')}
+                onChange={this.props.handleChange('typeProy')}
                 defaultValue={values.user} />
                 <div>
                     <button className="back" onClick={this.back} >Ver pregunta anterior</button>
@@ -38,4 +45,4 @@ class UserDetails extends Component{
     }
 }
 
-export default UserDetails
+export default TypeProy
