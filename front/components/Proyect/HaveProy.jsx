@@ -2,6 +2,13 @@ import React, {Component} from 'react'
 import Felicitaciones from './Felicitaciones';
 
 class HaveProy extends Component{
+    constructor(props){
+        super(props)
+
+        this.saveAndContinue = this.saveAndContinue.bind(this)
+        this.back = this.back.bind(this)
+    }
+
     saveAndContinue(e){
         e.preventDefault()
         this.props.nextStep()
@@ -16,7 +23,7 @@ class HaveProy extends Component{
 render(){
     const {values} = this.props
     
-    return (
+    return(
     <div>
         <Felicitaciones/>
         <form action="">
@@ -24,7 +31,8 @@ render(){
             <textarea 
             className="textarea"
             type="text"
-            onChange={this.props.handleChange('haveProy')}
+            name="haveProy"
+            onChange={this.props.handleChange}
             defaultValue={values.pitch}/> 
             <div>
                 <button className="back" onClick={this.back} >Ver pregunta anterior</button>

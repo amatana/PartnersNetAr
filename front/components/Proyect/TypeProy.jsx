@@ -31,7 +31,8 @@ class TypeProy extends Component{
                 <input 
                 className="input"
                 type="text"
-                onChange={this.props.handleChange('typeProy')}
+                name="typeProy"
+                onChange={this.props.handleChange}
                 defaultValue={values.user} />
                 <div>
                     <button className="back" onClick={this.back} >Ver pregunta anterior</button>

@@ -27,11 +27,12 @@ render(){
     <div>
         <Felicitaciones/>
         <form action="">
-            <p className="pregunta">3. De que se trata *nombre del proyecto*? </p>
+            <p className="pregunta">3. De que se trata {values.nameProy}? </p>
             <textarea 
             className="textarea"
             type="text"
-            onChange={this.props.handleChange('infoProy')}
+            name="infoProy"
+            onChange={this.props.handleChange}
             defaultValue={values.pitch}/> 
             <div>
                 <button className="back" onClick={this.back} >Ver pregunta anterior</button>

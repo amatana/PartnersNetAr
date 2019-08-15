@@ -22,7 +22,7 @@ class MainRouter extends React.Component {
             <Switch>
                 <Route exact path='/'  component={Landing} />
                 <Route exact path='/register'  component={MainForm} />
-                {/* <Route exact path='/register/proyect'  component={MainProy} /> */}
+                <Route exact path='/register/proyect'  component={MainProy} />
             </Switch>
         )
     }
