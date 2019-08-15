@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
 [type="checkbox"]{display:none}
 
 .checkboxes{
@@ -6,7 +8,7 @@ position: relative;
 height: 144px;
 width: 202px;
 color: #9B9B9B;
-font-family: "Avenir Next";
+font-family: "Nunito";
 font-size: 18px;
 line-height: 36px;
 
@@ -79,7 +81,7 @@ line-height: 36px;
         background-Color: transparent;
         margin-Bottom:0.5em;
         color: #EF4166;
-    	font-Family: "Avenir Next";
+    	font-Family: "Nunito";
     	font-Size: 19px;
     	font-Weight: 500;
     	line-Height: 19px;
@@ -99,22 +101,22 @@ line-height: 36px;
     color: #EF4166;
     text-Align: center;
     vertical-Align: middle;
-    font-Family: "Avenir Next";
+    font-Family: "Nunito";
     font-Weight: 600;
     margin:0.5em
 }
 
-.bienvenido{font-Family: "Avenir Next";	color: #044087}
-.name{height: 80px;	width: 446px;font-Family: "Avenir Next";	font-Size: 36px;
+.bienvenido{font-Family: "Nunito";	color: #044087}
+.name{height: 80px;	width: 446px;font-Family: "Nunito";	font-Size: 36px;
     line-Height: 40px;	 font-Weight: 600; color: #EF4166;}
-.conocernos{height: 20px;	width: 469px;	color: #044087;	font-Family: "Avenir Next";	font-Size: 14px;	line-Height: 20px;}
+.conocernos{height: 20px;	width: 469px;	color: #044087;	font-Family: "Nunito";	font-Size: 14px;	line-Height: 20px;}
 
 
 .continuar{
     /* height: 72px;
     width: 82px; */
     color: #044087;
-    font-family: "Avenir Next";
+    font-family: "Nunito";
     font-size: 18px;
     line-height: 36px;
     background-color: transparent;
@@ -135,7 +137,7 @@ line-height: 36px;
     /* height: 72px;
     width: 82px; */
     color: #9B9B9B;
-    font-family: "Avenir Next";
+    font-family: "Nunito";
     font-size: 18px;
     line-height: 36px;
     background-color: transparent;
@@ -157,14 +159,14 @@ option[selected]{
 }
 
 .tituloProyecto{
-    font-family: "Avenir Next";
+    font-family: "Nunito";
 }
 
 .claseProyecto{
         /* height: 48px;
     	width: 273px; */
     	color: #333333;
-    	font-family: "Avenir Next";
+    	font-family: "Nunito";
     	font-size: 14px;
     	font-style: italic;
         line-height: 24px;
@@ -186,7 +188,7 @@ option[selected]{
     	height: 56px;
     	width: 617px;
     	color: #044087;
-    	font-family: "Avenir Next";
+    	font-family: "Nunito";
     	font-size: 18px;
         line-height: 24px;
     }
@@ -195,7 +197,7 @@ option[selected]{
     	height: 159px;
     	width: 306px;
     	color: #4A4A4A;
-    	font-family: "Avenir Next";
+    	font-family: "Nunito";
     	font-size: 14px;
     	line-height: 20px;
 }
@@ -204,7 +206,7 @@ option[selected]{
     	/* height: 120px;
     	width: 225px; */
     	color: #4A4A4A;
-    	font-family: "Avenir Next";
+    	font-family: "Nunito";
     	font-size: 14px;
     	/* line-height: 30px; */
 }
@@ -212,7 +214,7 @@ option[selected]{
         /* height: 120px;
     	width: 225px; */
     	color: #4A4A4A;
-    	font-family: "Avenir Next";
+    	font-family: "Nunito";
     	font-size: 14px;
     	/* line-height: 30px; */
 }
@@ -233,7 +235,7 @@ option[selected]{
     	height: 22.69px;
     	width: 227.41px;
     	color: #EF4166;
-    	font-family: "Avenir Next";
+    	font-family: "Nunito";
     	font-size: 18px;
     	font-weight: 600;
     	line-height: 20px;
@@ -243,7 +245,7 @@ option[selected]{
     	height: 20px;
     	width: 83px;
     	color: #4A4A4A;
-    	font-family: "Avenir Next";
+    	font-family: "Nunito";
     	font-size: 14px;
     	font-style: italic;
     	line-height: 20px;

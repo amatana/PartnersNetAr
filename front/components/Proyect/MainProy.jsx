@@ -19,7 +19,7 @@ class MainProy extends Component {
         super(props)
         this.state = {
             step: 0,
-            achievements:[],
+            achievements:new Set(),
             nameProy:'',
             typeProy:'',
             infoProy:'',
@@ -34,7 +34,7 @@ class MainProy extends Component {
         this.nextStep = this.nextStep.bind(this)
         this.prevStep = this.prevStep.bind(this)
         this.handleInterest = this.handleInterest.bind(this)
-        
+        this.handleChange = this.handleChange.bind(this)
     }
 
     nextStep(){
@@ -51,15 +51,19 @@ class MainProy extends Component {
         })
     }
 
-    handleChange(input,event){
+    handleChange(event){
         if(event.target.type !== 'checkbox'){
-        this.setState({[input]:event.target.value})
+        this.setState({[event.target.name]:event.target.value})
         }else{
             const item = event.target.name;
             const achiev = this.state.achievements
-            achiev.push(item)
+            if (achiev.has(item)) {
+                achiev.delete(item);
+              } else {
+                achiev.add(item);
+              }
         }
-        if(input === 'type'){
+        if(event.target.name === 'type'){
             const {step}=this.state
             this.setState({
                 step: step + 1 

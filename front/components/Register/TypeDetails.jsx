@@ -41,7 +41,7 @@ class TypeDetails extends Component{
             <form>
                 <p className="pregunta">3. Qué tipo de emprendedor sos?</p>
 
-                <input 
+                <option 
                 type='button'
                 className="typeButton"
                 onTouchStart={this.changeButton}
@@ -49,8 +49,8 @@ class TypeDetails extends Component{
                 name='type'
                 value='TP'
                 onClick={this.props.handleChange}
-                >tengo mi proyecto</input><br/>
-                <input  
+                >tengo mi proyecto</option><br/>
+                <option  
                 className="typeButton"
                 onTouchStart={this.changeButton}
                 onMouseDown={this.changeButton}
@@ -58,8 +58,8 @@ class TypeDetails extends Component{
                 type='button'
                 value='QC'
                 onClick={this.props.handleChange}
-                >Quiero colaborar en un proyecto</input><br/>
-                <input 
+                >Quiero colaborar en un proyecto</option><br/>
+                <option 
                 type='button'
                 className="typeButton"
                 onTouchStart={this.changeButton}
@@ -67,8 +67,8 @@ class TypeDetails extends Component{
                 name='type'
                 value='ORG'
                 onClick={this.props.handleChange}
-                >soy una organizacion</input><br/>
-                <input  
+                >soy una organizacion</option><br/>
+                <option  
                 type='button'
                 className="typeButton"
                 onTouchStart={this.changeButton}
@@ -76,7 +76,7 @@ class TypeDetails extends Component{
                 name='type'
                 value='INV'
                 onClick={this.props.handleChange}
-                >soy un inversor</input><br/>
+                >soy un inversor</option><br/>
                 
                 <div>
                     <button className="back" onClick={this.back} >Ver pregunta Anterior</button>

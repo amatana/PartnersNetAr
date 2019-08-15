@@ -30,8 +30,8 @@ class NameProy extends Component{
                 className="input" 
                 
                 type="text"
-                
-                onChange={this.props.handleChange('nameProy')}
+                name="nameProy"
+                onChange={this.props.handleChange}
                 defaultValue={values.email} />
                 <div>
                     <button className="continuar" onClick={this.saveAndContinue}>Siguiente Pregunta</button>

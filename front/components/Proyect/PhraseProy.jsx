@@ -32,8 +32,8 @@ class PhraseProy extends Component{
                 className="input" 
                 
                 type="text"
-                
-                onChange={this.props.handleChange('phraseProy')}
+                name="phraseProy"
+                onChange={this.props.handleChange}
                 defaultValue={values.email} />
                 <div>
                     <button className="back" onClick={this.back} >Ver pregunta anterior</button>

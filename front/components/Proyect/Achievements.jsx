@@ -42,14 +42,14 @@ class Achievements extends Component{
             <div className="two-colums">
                 
                      <input type="checkbox"
-                        onChange={this.props.handleChange('achievements')}
+                        onChange={this.props.handleChange}
                         defaultValue={values.achievements} 
                         id="idea"
                         name="tengo una idea"/>
                             <label className="checkboxes" htmlFor="idea" style={{marginLeft: "20em"}}>tengo una idea</label><br/>
                     
                     <input type="checkbox"
-                        onChange={this.props.handleChange('achievements')}
+                        onChange={this.props.handleChange}
                         defaultValue={values.achievements}
                         id="equipo"
                         name="tengo equipo"
@@ -57,7 +57,7 @@ class Achievements extends Component{
                             <label className="checkboxes" htmlFor="equipo" style={{marginLeft: "20em"}}> tengo equipo</label> <br/>
                     
                     <input type="checkbox"
-                        onChange={this.props.handleChange('achievements')}
+                        onChange={this.props.handleChange}
                         defaultValue={values.achievements}
                         id="MVP"
                         name="MVP"
@@ -65,21 +65,21 @@ class Achievements extends Component{
                             <label className="checkboxes" htmlFor="MVP" style={{marginLeft: "20em"}}>MVP</label> <br/>
                     
                     <input type="checkbox"
-                        onChange={this.props.handleChange('achievements')}
+                        onChange={this.props.handleChange}
                         defaultValue={values.achievements}
                         id="inversiones"
                         name="Ronda de inversiones"/>
                             <label className="checkboxes" htmlFor="inversiones">Ronda de inversiones</label><br/>
                     
                     <input type="checkbox"
-                        onChange={this.props.handleChange('achievements')}
+                        onChange={this.props.handleChange}
                         defaultValue={values.achievements}
                         id="facturando"
                         name="Ya estoy facturando"/>
                             <label className="checkboxes" htmlFor="facturando">Ya estoy facturando</label> <br/>
                     
                     <input type="checkbox"
-                        onChange={this.props.handleChange('achievements')}
+                        onChange={this.props.handleChange}
                         defaultValue={values.achievements}
                         id="expandir"
                         name="Busco expandirme"/>
