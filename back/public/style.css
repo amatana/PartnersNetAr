@@ -106,6 +106,8 @@ font-family: "Nunito";
     align-content: stretch;
     font-family: "FontAwesome";
     content: '\f00c';
+    position: relative;
+    color: #EF4166;
 }
 
 .two-colums{-webkit-column-count: 2; /* Chrome, Safari, Opera */

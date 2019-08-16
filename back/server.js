@@ -25,20 +25,20 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(morgan('dev'))
 app.use(express.static(path.resolve(__dirname, 'public')));
 
-// app.use(multer({
-//     storage,
-//     dest: 'public/uploads',
-//     fileFilter:(req,file,cb)=>{
-//         const filetypes = /jpeg|jpg|png|gif|aac|aif|flac|iff|m4a|m4b|mid|midi|mp3|mpa|mpc|oga|ogg|ra|ram|snd|wav|wma/
-//         const mimetype = filetypes.test(file.mimetype)
-//         const extname = filetypes.test(path.extname(file.originalname))
-//         if(mimetype && extname){
-//             return cb(null,true)
-//         }else{
-//             cb("Error: Archivo debe ser un archivo valido. Verifique la extension")
-//         }
-//     }
-// })).single()
+app.use(multer({
+    storage,
+    dest: 'public/uploads',
+    fileFilter:(req,file,cb)=>{
+        const filetypes = /jpeg|jpg|png|gif|aac|aif|flac|iff|m4a|m4b|mid|midi|mp3|mpa|mpc|oga|ogg|ra|ram|snd|wav|wma/
+        const mimetype = filetypes.test(file.mimetype)
+        const extname = filetypes.test(path.extname(file.originalname))
+        if(mimetype && extname){
+            return cb(null,true)
+        }else{
+            cb("Error: Archivo debe ser un archivo valido. Verifique la extension")
+        }
+    }
+}).single('file'))
 
 app.use('/api', routesIndex) //puerta de entrada a la api
 

@@ -46,7 +46,7 @@ class Achievements extends Component{
                         defaultValue={values.achievements} 
                         id="idea"
                         name="tengo una idea"/>
-                            <label className="checkboxes" htmlFor="idea" style={{marginLeft: "20em"}}>tengo una idea</label><br/>
+                            <label className="checkboxes" htmlFor="idea" >tengo una idea</label><br/>
                     
                     <input type="checkbox"
                         onChange={this.props.handleChange}
@@ -54,15 +54,15 @@ class Achievements extends Component{
                         id="equipo"
                         name="tengo equipo"
                         />
-                            <label className="checkboxes" htmlFor="equipo" style={{marginLeft: "20em"}}> tengo equipo</label> <br/>
+                            <label className="checkboxes" htmlFor="equipo" > tengo equipo</label> <br/>
                     
                     <input type="checkbox"
                         onChange={this.props.handleChange}
                         defaultValue={values.achievements}
                         id="MVP"
                         name="MVP"
-                        style={{marginLeft: "10px"}}/>
-                            <label className="checkboxes" htmlFor="MVP" style={{marginLeft: "20em"}}>MVP</label> <br/>
+                        />
+                            <label className="checkboxes" htmlFor="MVP" >MVP</label> <br/>
                     
                     <input type="checkbox"
                         onChange={this.props.handleChange}
