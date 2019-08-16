@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import React, {Component} from 'react'
 import Achievements from './Achievements'
 import NameProy from './NameProy'
@@ -35,6 +36,8 @@ class MainProy extends Component {
         this.prevStep = this.prevStep.bind(this)
         this.handleInterest = this.handleInterest.bind(this)
         this.handleChange = this.handleChange.bind(this)
+        this.handleFile = this.handleFile.bind(this)
+        
     }
 
     nextStep(){
@@ -71,7 +74,14 @@ class MainProy extends Component {
         }
         console.log(this.state)
     }
-
+    //Trabajar para obtener archivos
+    //Añadirlo al pitchProy
+    handleFile(event,input){
+        console.log(event.name)
+        this.setState({
+            [event.name]:input
+        })
+    }
 
     handleInterest(input){
         const int = input.value
@@ -117,6 +127,7 @@ class MainProy extends Component {
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 handleChange = {this.handleChange}
+                handleFile={this.handleFile}
                 values = {values}
                 />)
             case 5:

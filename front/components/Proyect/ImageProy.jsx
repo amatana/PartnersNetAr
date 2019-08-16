@@ -4,16 +4,32 @@ import Felicitaciones from './Felicitaciones';
 class ImageProy extends Component{
     constructor(props){
         super(props)
+        this.URI= '/api/photo'
 
         this.saveAndContinue = this.saveAndContinue.bind(this)
         this.back = this.back.bind(this)
         this.save = this.save.bind(this)
+        this.postFile = this.postFile.bind(this)
     }
+
+    async postFile(photo){
+        console.log(photo)
+        const res = await fetch(this.URI,{
+            method: 'POST',
+            body: photo
+        })
+        const data = await res.json()
+        console.log(data)
+    }
+
 
     saveAndContinue(e){
         e.preventDefault()
+        //this.postFile(photo)
+        const input= document.getElementById('fileUpload')
+        const photo = document.getElementById('fileUpload').files
+        this.props.handleFile(input,photo)
         this.props.nextStep()
-        
     }
     back(e){
         e.preventDefault()
@@ -24,6 +40,7 @@ class ImageProy extends Component{
     save(e){
         // e.preventDefault()
         const input= document.getElementById('fileUpload')
+        console.log(this.props)
         //this.props.handleInterest(input)
         // input.value= ''
         const div = document.getElementById('value')
@@ -51,6 +68,7 @@ class ImageProy extends Component{
                 className="inputFile"
                 id="fileUpload"
                 type="file"
+                name="imageProy"
                 accept="image/*"
                 onChange={this.save}
                 defaultValue={values.imageProy}/>
@@ -70,6 +88,7 @@ class ImageProy extends Component{
                     <button className="continuar" onClick={this.saveAndContinue} >Siguiente Pregunta</button>
                 </div>
             </form>
+
        </div>
        )
     }
