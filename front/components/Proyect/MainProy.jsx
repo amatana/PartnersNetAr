@@ -77,7 +77,6 @@ class MainProy extends Component {
     //Trabajar para obtener archivos
     //Añadirlo al pitchProy
     handleFile(event,input){
-        console.log(event.name)
         this.setState({
             [event.name]:input
         })
@@ -142,6 +141,7 @@ class MainProy extends Component {
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 handleChange = {this.handleChange}
+                handleFile={this.handleFile}
                 values = {values}
                 />)
             case 7:

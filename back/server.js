@@ -38,7 +38,7 @@ app.use(multer({
             cb("Error: Archivo debe ser un archivo valido. Verifique la extension")
         }
     }
-}).single('file'))
+}).single("imageProy"))
 
 app.use('/api', routesIndex) //puerta de entrada a la api
 
