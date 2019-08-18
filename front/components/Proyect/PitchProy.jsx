@@ -12,6 +12,10 @@ class ImageProy extends Component{
 
     saveAndContinue(e){
         e.preventDefault()
+        const input= document.getElementById('fileUpload')
+        const file = input.files
+        //this.postFile(file)
+        this.props.handleFile(input,file)
         this.props.nextStep()
         
     }
@@ -51,9 +55,10 @@ class ImageProy extends Component{
                 className="inputFile"
                 id="fileUpload"
                 type="file"
+                name="pitchProy"
                 accept="audio/*"
                 onChange={this.save}
-                defaultValue={values.pitchProy}/>
+                />
                 
                 <div id="value" className="subir">
                 </div>

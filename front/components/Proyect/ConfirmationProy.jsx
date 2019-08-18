@@ -3,13 +3,48 @@ import React, {Component} from 'react'
 class Confirmation extends Component{
     constructor(props){
         super(props)
-
+        const {values:{achievements,nameProy,typeProy,infoProy,pitchProy,imageProy,phraseProy,haveProy,needProy,teamProy}}=this.props
+        this.achievements=achievements
+        this.nameProy=nameProy
+        this.typeProy=typeProy
+        this.infoProy=infoProy
+        this.pitchProy=pitchProy
+        this.imageProy=imageProy
+        this.phraseProy=phraseProy
+        this.haveProy=haveProy
+        this.needProy=needProy
+        this.teamProy=teamProy
+        this.URI= 'http://localhost:8081/api/photo'
         this.saveAndContinue = this.saveAndContinue.bind(this)
         this.back = this.back.bind(this)
     }
 
-    saveAndContinue(e){
+    async saveAndContinue(e){
         e.preventDefault()
+        const {values:{achievements,nameProy,typeProy,infoProy,pitchProy,imageProy,phraseProy,haveProy,needProy,teamProy}}=this.props
+
+        const formData = new FormData
+        formData.append('achievements',this.achievements)
+        formData.append('nameProy',this.nameProy)
+        formData.append('typeProy',this.typeProy)
+        formData.append('infoProy',this.infoProy)
+        formData.append('pitchProy',this.pitchProy)
+        formData.append('imageProy',this.imageProy)
+        formData.append('phraseProy',this.phraseProy)
+        formData.append('haveProy',this.haveProy)
+        formData.append('needProy',this.needProy)
+        formData.append('teamProy',this.teamProy)
+
+        console.log('finish',formData)
+        const res = await fetch(this.URI,{
+            method: 'POST',
+            body: formData,
+            // headers: {
+            //     'content-type': 'multipart/form-data'
+            // }
+        })
+        const data = await res.json()
+        console.log(data)
         this.props.nextStep()
         
     }
@@ -39,8 +74,8 @@ class Confirmation extends Component{
                     <li style={style.list}>Name: {nameProy}</li>
                     <li style={style.list}>Type: {typeProy}</li>
                     <li style={style.list}>Info: {infoProy}</li>
-                    <li style={style.list}>Pitch: {pitchProy}</li>
-                    <li style={style.list}>Image: {imageProy}</li>
+                    <li style={style.list}>Pitch: {pitchProy.name}</li>
+                    <li style={style.list}>Image: {imageProy.name}</li>
                     <li style={style.list}>Phrase: {phraseProy}</li>
                     <li style={style.list}>Have: {haveProy}</li>
                     <li style={style.list}>Need: {needProy}</li>

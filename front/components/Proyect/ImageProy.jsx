@@ -4,30 +4,30 @@ import Felicitaciones from './Felicitaciones';
 class ImageProy extends Component{
     constructor(props){
         super(props)
-        this.URI= '/api/photo'
+        
 
         this.saveAndContinue = this.saveAndContinue.bind(this)
         this.back = this.back.bind(this)
         this.save = this.save.bind(this)
-        this.postFile = this.postFile.bind(this)
+        // this.postFile = this.postFile.bind(this)
     }
 
-    async postFile(photo){
-        console.log(photo)
-        const res = await fetch(this.URI,{
-            method: 'POST',
-            body: photo
-        })
-        const data = await res.json()
-        console.log(data)
-    }
+    // async postFile(photo){
+    //     console.log(photo)
+    //     const res = await fetch(this.URI,{
+    //         method: 'POST',
+    //         body: photo
+    //     })
+    //     const data = await res.json()
+    //     console.log(data)
+    // }
 
 
     saveAndContinue(e){
         e.preventDefault()
-        //this.postFile(photo)
         const input= document.getElementById('fileUpload')
-        const photo = document.getElementById('fileUpload').files
+        const photo = input.files
+        //this.postFile(photo)
         this.props.handleFile(input,photo)
         this.props.nextStep()
     }
@@ -71,10 +71,10 @@ class ImageProy extends Component{
                 name="imageProy"
                 accept="image/*"
                 onChange={this.save}
-                defaultValue={values.imageProy}/>
+                />
                 
-                <div id="value" className="subir">
-                </div>
+                <label htmlFor="fileUpload" id="value" className="subir">
+                </label>
                 <label htmlFor="fileUpload" className="saveInterest"></label>
                 {/* <button className="saveInterest" onClick={this.save}></button> */}
                 
@@ -87,7 +87,7 @@ class ImageProy extends Component{
                     <button className="back" onClick={this.back} >Ver pregunta anterior</button>
                     <button className="continuar" onClick={this.saveAndContinue} >Siguiente Pregunta</button>
                 </div>
-            </form>
+                </form>
 
        </div>
        )
