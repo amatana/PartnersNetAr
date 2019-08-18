@@ -18,14 +18,6 @@ class Achievements extends Component{
     render(){
         const {values}=this.props
 
-        const style = {}
-        
-        style.bienvenido = {fontFamily: "Avenir Next",	color: "#044087"}
-        style.name= {height: "80px",	width: "446px",fontFamily: "Avenir Next",	fontSize: "36px",
-            lineHeight: "40px",	 fontWeight: "600", color: "#EF4166",}
-        style.conocernos = {height: "20px",	width: "469px",	color: "#044087",	fontFamily: "Avenir Next",	fontSize: "14px",	lineHeight: "20px",}
-
-       
 
         return(
         <div>
@@ -82,7 +74,6 @@ class Achievements extends Component{
                             <label className="checkboxes" htmlFor="expandir">Busco expandirme</label> <br/>
                 </div>
                 <div>
-                    {/*  */}
                     <button className="continuar" onClick={this.saveAndContinue} >Siguiente Pregunta</button>
                 </div>
             </form>
