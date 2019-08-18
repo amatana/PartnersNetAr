@@ -189,6 +189,14 @@ font-family: "Nunito";
     line-Height: 40px;	 font-Weight: 600; color: #EF4166;}
 .conocernos{height: 20px;	width: 469px;	color: #044087;	font-Family: "Nunito";	font-Size: 14px;	line-Height: 20px;}
 
+.confirmationList{
+    color: #EF4166;
+    font-Size: 19px;
+    font-Weight: 500;
+    line-Height: 19px;
+    margin-Bottom: 1em;
+    font-Family: "Avenir Next";
+}
 
 .continuar{
     /* height: 72px;

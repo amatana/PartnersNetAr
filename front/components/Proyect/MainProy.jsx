@@ -74,8 +74,6 @@ class MainProy extends Component {
         }
         console.log(this.state)
     }
-    //Trabajar para obtener archivos
-    //Añadirlo al pitchProy
     handleFile(event,input){
         console.log(input[0])
         this.setState({
