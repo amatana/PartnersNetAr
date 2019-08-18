@@ -32,13 +32,16 @@ app.use(multer({
         const filetypes = /jpeg|jpg|png|gif|aac|aif|flac|iff|m4a|m4b|mid|midi|mp3|mpa|mpc|oga|ogg|ra|ram|snd|wav|wma/
         const mimetype = filetypes.test(file.mimetype)
         const extname = filetypes.test(path.extname(file.originalname))
+        console.log({'ext':path.extname(file.originalname), 'mime':file.mimetype})
         if(mimetype && extname){
+            return cb(null,true)
+        }else if(file.mimetype=='audio/mp4'){
             return cb(null,true)
         }else{
             cb("Error: Archivo debe ser un archivo valido. Verifique la extension")
         }
     }
-}).single("imageProy"))
+}).fields([{name:"imageProy",maxCount:1},{name:"pitchProy",maxCount:1}]))
 
 app.use('/api', routesIndex) //puerta de entrada a la api
 

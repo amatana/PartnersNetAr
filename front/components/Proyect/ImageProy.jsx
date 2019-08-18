@@ -9,18 +9,18 @@ class ImageProy extends Component{
         this.saveAndContinue = this.saveAndContinue.bind(this)
         this.back = this.back.bind(this)
         this.save = this.save.bind(this)
-        this.postFile = this.postFile.bind(this)
+        // this.postFile = this.postFile.bind(this)
     }
 
-    async postFile(photo){
-        console.log(photo)
-        const res = await fetch(this.URI,{
-            method: 'POST',
-            body: photo
-        })
-        const data = await res.json()
-        console.log(data)
-    }
+    // async postFile(photo){
+    //     console.log(photo)
+    //     const res = await fetch(this.URI,{
+    //         method: 'POST',
+    //         body: photo
+    //     })
+    //     const data = await res.json()
+    //     console.log(data)
+    // }
 
 
     saveAndContinue(e){

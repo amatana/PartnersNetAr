@@ -38,7 +38,10 @@ class Confirmation extends Component{
         console.log('finish',formData)
         const res = await fetch(this.URI,{
             method: 'POST',
-            body: formData
+            body: formData,
+            // headers: {
+            //     'content-type': 'multipart/form-data'
+            // }
         })
         const data = await res.json()
         console.log(data)
@@ -71,8 +74,8 @@ class Confirmation extends Component{
                     <li style={style.list}>Name: {nameProy}</li>
                     <li style={style.list}>Type: {typeProy}</li>
                     <li style={style.list}>Info: {infoProy}</li>
-                    <li style={style.list}>Pitch: {pitchProy}</li>
-                    <li style={style.list}>Image: {imageProy[0].name}</li>
+                    <li style={style.list}>Pitch: {pitchProy.name}</li>
+                    <li style={style.list}>Image: {imageProy.name}</li>
                     <li style={style.list}>Phrase: {phraseProy}</li>
                     <li style={style.list}>Have: {haveProy}</li>
                     <li style={style.list}>Need: {needProy}</li>

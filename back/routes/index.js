@@ -19,8 +19,10 @@ router.get('/pregunta', function (req, res) {
 
 //Pensar e investigar qué convienve para recibir el pitch y la foto
 router.post('/photo', (req,res)=>{
+    console.log("body:")
     console.log(req.body)
-    console.log(req.file)
+    console.log("file:")
+    console.log(req.files)
 res.json({message:'posted'})
 })
 
