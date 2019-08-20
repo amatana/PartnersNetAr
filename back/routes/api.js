@@ -13,8 +13,9 @@ router.post('/crearUsuario', function (req, res) {
     });
 })
 
-router.get('/pregunta', function (req, res) {
-    res.send('/respuesta!')
+router.get('/users',async function (req, res) {
+    user = await User.findAll()
+    res.json(user)
 });
 
 router.post('/photo', (req,res)=>{

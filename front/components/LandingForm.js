@@ -18,7 +18,7 @@ render(){
             </button>
 
             <p className="seEncontraron">Se encontraron y fue sociedad a  
-            <strong className="primeraVista">primera vista</strong></p>
+            <strong className="primeraVista"> primera vista</strong></p>
 
             <p className="partner">
                 Partner es una red social colaborativa que conecta
