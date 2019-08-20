@@ -6,8 +6,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const morgan = require('morgan');
 const db = require('./config/db');
-const routesIndex = require('./routes');
 const multer = require('multer')
+
 
 dotenv.config()
 
@@ -43,41 +43,11 @@ app.use(multer({
     }
 }).fields([{name:"imageProy",maxCount:1},{name:"pitchProy",maxCount:1}]))
 
-app.use('/api', routesIndex) //puerta de entrada a la api
 
+app.use('/', require('./routes/index.js'))
+app.use('/api', require('./routes/api')) //puerta de entrada a la api
 
-//Passport - manejo de loggeo y validación de usuarios
-//Configuración 
-// const passport = require('passport');
-// const User = require('./models/Users').default.default
-
-// app.use(passport.initialize());
-// app.use(passport.session())
-
-// passport.serializeUser(function (user, done) {
-//     done(null, user.id)
-// })
-
-// passport.deserializeUser(function (id, done) {
-//     User.findByPk(id)
-//         .then(user => done(null, user))
-// })
-
-
-// //Estrategia Local de Autorización
-// const localStrategy = require('passport-local').Strategy
-// passport.use(new localStrategy(
-//     function (username, password, done) {
-//         User.findOne({ username: username }, function (err, user) {
-//             if (err) { return done(err); }
-//             if (!user) { return done(null, false); }
-//             if (!user.verifyPassword(password)) { return done(null, false); }
-//             return done(null, user);
-//         }
-//         )
-//     })
-// )
-
+require('./auth/passport')
 //Manejo de Sesiones en el navegador con Express y Sequelize 
 
 // const session = require('express-session')
@@ -91,6 +61,8 @@ app.use('/api', routesIndex) //puerta de entrada a la api
 //     resave: false, 
 //     proxy: true 
 //   }))
+
+
 
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, ('./public/index.html')))
