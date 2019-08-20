@@ -17,9 +17,9 @@ router.get('/auth/google/callback',
 //passport Facebook
 router.get('/auth/facebook',passport.authenticate('facebook',{scope:['email']}))
 
-router.get('auth/facebook/callback',
-    passport.authenticate('facebook', {successRedirect:'localhost:8081/api/users',
-                                        failureRedirect: '/'})
+router.get('/auth/facebook/callback',
+    passport.authenticate('facebook', {successRedirect:'/api/users',
+                                            failureRedirect: '/'})
 )
 
 module.exports = router
