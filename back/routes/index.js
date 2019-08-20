@@ -15,7 +15,7 @@ router.get('/auth/google/callback',
 )
 
 //passport Facebook
-router.get('/auth/facebook',passport.authenticate('facebook',{scope:['email']}))
+router.get('/auth/facebook',passport.authenticate('facebook',{scope:['user_photos','user_location','user_age_range','email']}))
 
 router.get('/auth/facebook/callback',
     passport.authenticate('facebook', {successRedirect:'/api/users',

@@ -6,7 +6,6 @@ const User = require('../models/Users')//.default.default
 const dotenv = require('dotenv')
 dotenv.config()
 
- console.log(require('../models/Users'))
 app.use(passport.initialize());
 app.use(passport.session())
 
@@ -42,20 +41,22 @@ passport.use(new FacebookStrategy({
         clientSecret: process.env.FACEBOOK_APP_SECRET,
         callbackURL: "http://localhost:8081/auth/facebook/callback"
         },
-        (accessToken, refreshToken, profile, done)=>{
-         //Complete with things of postgres, but something like this:
-            User.findOne({id:profile.id},(err,user)=>{
+        async (accessToken, refreshToken, profile, done)=>{
+            console.log('to search')
+            await User.findOne({where:{'id':profile.id}}).then((err,user)=>{
                 if(err){
                     return done(err)
                 }
                 if(user){
                     return done(null,user)
                 }else{
+                    console.log(profile)
                     let newUser = new User()
                     newUser.id=profile.id
                     newUser.token= accessToken
+                    newUser.password= newUser.token
                     newUser.name=profile.name.givenName + ' ' + profile.name.familyName
-                    newUser.email=profile.emails[0].value
+                    //newUser.email=profile.emails[0].value
 
                     newUser.save((err)=>{
                         if(err){
@@ -67,8 +68,8 @@ passport.use(new FacebookStrategy({
                 }                
             })
 
-        }
-))
+        })
+    )
 
 
 //Estrategia Google de Autorización
@@ -78,17 +79,20 @@ passport.use(new GoogleStrategy({
     clientSecret: process.env.GOOGLE_CONSUMER_SECRET,
     callbackURL: "http://localhost:8081/auth/google/callback"
 },
-     (accesstoken,refreshToken,profile,done)=>{
-        User.findOne({id:profile.id},(err,user)=>{
+     (accessToken,refreshToken,profile,done)=>{
+                      
+        User.findOne({where:{'id':profile.id}}).then((err,user)=>{
             if(err){
                 return done(err)
             }
             if(user){
                 return done(null,user)
             }else{
+                console.log(profile)
                 let newUser = new User()
                 newUser.id=profile.id
                 newUser.token= accessToken
+                newUser.password = newUser.token
                 newUser.name=profile.name.givenName + ' ' + profile.name.familyName
                 newUser.email=profile.emails[0].value
 
