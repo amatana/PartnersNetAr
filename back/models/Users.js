@@ -5,7 +5,12 @@ const sequelize = require('../config/db');
 
 class User extends Model{}
 User.init({
-    username:{
+    id:{
+        type: S.STRING,
+        primaryKey:true,
+        unique: true
+    },
+    token:{
         type: S.STRING,
         unique: true
     },
@@ -15,6 +20,14 @@ User.init({
         validate: {
             isEmail: true
         },
+        unique: true
+    },
+    name:{
+        type: S.STRING,
+        unique: true
+    },
+    username:{
+        type: S.STRING,
         unique: true
     },
     linkedIn: {
@@ -45,6 +58,7 @@ User.init({
         }
     }
 })
+
 //Instance Methods
 User.prototype.hashPassword = function(password){
     return crypto.createHmac('sha1', this.salt).update(password).digest('hex')
@@ -52,5 +66,4 @@ User.prototype.hashPassword = function(password){
 User.prototype.verifyPassword= function(password){
     return this.password === this.hashPassword(password)
 }
-
 module.exports = User;

@@ -2,10 +2,11 @@
 // Configuración 
 const passport = require('passport');
 const app = require('express')()
-const User = require('../models/Users').default.default
+const User = require('../models/Users')//.default.default
 const dotenv = require('dotenv')
 dotenv.config()
 
+ console.log(require('../models/Users'))
 app.use(passport.initialize());
 app.use(passport.session())
 
@@ -43,10 +44,27 @@ passport.use(new FacebookStrategy({
         },
         (accessToken, refreshToken, profile, done)=>{
          //Complete with things of postgres, but something like this:
+            User.findOne({id:profile.id},(err,user)=>{
+                if(err){
+                    return done(err)
+                }
+                if(user){
+                    return done(null,user)
+                }else{
+                    let newUser = new User()
+                    newUser.id=profile.id
+                    newUser.token= accessToken
+                    newUser.name=profile.name.givenName + ' ' + profile.name.familyName
+                    newUser.email=profile.emails[0].value
 
-             User.findOrCreate({ username: username },(err,user)=>{
-                    if(err) {return done(err)}
-                    done(null,user)
+                    newUser.save((err)=>{
+                        if(err){
+                            throw err;
+                        }else{
+                            done(null,newUser)
+                        }
+                    })
+                }                
             })
 
         }
@@ -61,8 +79,28 @@ passport.use(new GoogleStrategy({
     callbackURL: "http://localhost:8081/auth/google/callback"
 },
      (accesstoken,refreshToken,profile,done)=>{
-         User.findOrCreate({googleId:profile.id},()=>{
-             return done(err,user)
-})
-}
-))
+        User.findOne({id:profile.id},(err,user)=>{
+            if(err){
+                return done(err)
+            }
+            if(user){
+                return done(null,user)
+            }else{
+                let newUser = new User()
+                newUser.id=profile.id
+                newUser.token= accessToken
+                newUser.name=profile.name.givenName + ' ' + profile.name.familyName
+                newUser.email=profile.emails[0].value
+
+                newUser.save((err)=>{
+                    if(err){
+                        throw err;
+                    }else{
+                        done(null,newUser)
+                    }
+                })
+            }                
+        })
+
+    })
+)
