@@ -1,29 +1,25 @@
-const express = require('express');
-const router = express.Router();
-const User = require('../models/Users')
+const passport = require('passport')
+const router = require('express').Router();
 
 
-router.post('/crearUsuario', function (req, res) {
-    User.create({
-        email: Math.random() + "@gmail.com",
-        password: '123456',
-        linkedIn: 'ana-amat'
-    }).then(user => {
-        res.send(user)
-    });
-})
+//passport Google
+router.get('/auth/google',
+    passport.authenticate('google',{scope: ['profile','email']})
+)
 
-router.get('/pregunta', function (req, res) {
-    res.send('/respuesta!')
-});
+router.get('/auth/google/callback',
+    passport.authenticate('google',{failureRedirect:'/'}),
+    (req,res)=>{
+        res.redirect('/profile')
+    }    
+)
 
-//Pensar e investigar qué convienve para recibir el pitch y la foto
-router.post('/photo', (req,res)=>{
-    console.log("body:")
-    console.log(req.body)
-    console.log("file:")
-    console.log(req.files)
-res.json({message:'posted'})
-})
+//passport Facebook
+router.get('/auth/facebook',passport.authenticate('facebook',{scope:['email']}))
+
+router.get('auth/facebook/callback',
+    passport.authenticate('facebook', {successRedirect:'/profile',
+                                        failureRedirect: '/'})
+)
 
 module.exports = router

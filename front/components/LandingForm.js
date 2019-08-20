@@ -33,6 +33,11 @@ render(){
                 </button>
             </Link> 
 
+            <div>
+               <Link to="/auth/google"> <button style={{backgroundColor: "red",height: "40px",width: "90px",borderColor:"transparent", margin:"5px", color:"white"}}>Google</button></Link>
+               <Link to="/auth/facebook"> <button style={{backgroundColor:"lightblue", height:"40px",width:"90px",borderColor:"transparent", margin:"5px", color:"white"}}>Facebook</button></Link>
+            </div>
+
         </div>
         )
     }
