@@ -53,7 +53,7 @@ passport.use(new FacebookStrategy({
 ))
 
 
-//Estrategia Facebook de Autorización
+//Estrategia Google de Autorización
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CONSUMER_KEY,
