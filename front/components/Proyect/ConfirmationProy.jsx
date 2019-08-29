@@ -22,8 +22,12 @@ class Confirmation extends Component{
     async saveAndContinue(e){
         e.preventDefault()
 
+        let achiev = []
+        this.achievements.forEach((set)=>{
+            achiev.push(set)
+        })
         const formData = new FormData
-        formData.append('achievements',this.achievements)
+        formData.append('achievements',achiev)
         formData.append('nameProy',this.nameProy)
         formData.append('typeProy',this.typeProy)
         formData.append('infoProy',this.infoProy)
@@ -33,14 +37,11 @@ class Confirmation extends Component{
         formData.append('haveProy',this.haveProy)
         formData.append('needProy',this.needProy)
         formData.append('teamProy',this.teamProy)
-
+        console.log(this.pitchProy)
         console.log('finish',formData)
         const res = await fetch(this.URI,{
             method: 'POST',
             body: formData,
-            // headers: {
-            //     'content-type': 'multipart/form-data'
-            // }
         })
         const data = await res.json()
         console.log(data)

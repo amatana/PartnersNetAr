@@ -38,7 +38,6 @@ app.use(multer({
         const filetypes = /jpeg|jpg|png|gif|aac|aif|flac|iff|m4a|m4b|mid|midi|mp3|mpa|mpc|oga|ogg|ra|ram|snd|wav|wma/
         const mimetype = filetypes.test(file.mimetype)
         const extname = filetypes.test(path.extname(file.originalname))
-        console.log({'ext':path.extname(file.originalname), 'mime':file.mimetype})
         if(mimetype && extname){
             return cb(null,true)
         }else if(file.mimetype=='audio/mp4'){
@@ -76,15 +75,15 @@ app.get('/*', function (req, res) {
 
 
 //PARA EL INICIO DE SESIONES CUANDO SE LEVANTA EL SERVIDOR
-// sessionStore.sync()
-//     .then(() => {
-//         db.sync({ force: false }).then((con) => {
-//             app.listen(process.env.PORT, () => console.log('Server is listening on port: ' + process.env.PORT))
-//         })
-//     });
+sessionStore.sync()
+    .then(() => {
+        db.sync({ force: false }).then(() => {
+            app.listen(process.env.PORT, () => console.log('Server is listening on port: ' + process.env.PORT))
+        })
+    });
 
 //One step behind
-db.sync({ force: true })
-    .then(() => {
-        app.listen(process.env.PORT, () => console.log('Server is listening on port: ' + process.env.PORT))
-    })
+// db.sync({ force: true })
+//     .then(() => {
+//         app.listen(process.env.PORT, () => console.log('Server is listening on port: ' + process.env.PORT))
+//     })

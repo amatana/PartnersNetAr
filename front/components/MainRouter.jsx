@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 import React from 'react';
 import { Route, Redirect, Switch, Link } from 'react-router-dom';
-
+// import {} from 'react-redux'
 import Landing from './LandingForm'
 import MainForm from './Register/MainForm'
 import MainProy from './Proyect/MainProy'

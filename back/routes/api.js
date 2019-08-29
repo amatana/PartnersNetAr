@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/Users')
-
+const Proyect = require('../models/Projects')
 
 router.post('/crearUsuario', function (req, res) {
     const profile =req.body
@@ -31,24 +31,32 @@ router.get('/users',async function (req, res) {
     res.json(user)
 });
 
-router.post('/proyect', (req,res)=>{
+router.post('/proyect',async (req,res)=>{
     const profile =req.body
+    const file = req.files
     console.log(profile)
-    User.create({
-        logros: profile.achievements,        
+    console.log(file.pitchProy)
+    console.log(file.imageProy)
+
+    const proy = await Proyect.create({
+        logros: profile.achievements.split(','),        
         nombreProyecto: profile.nameProy,
         tipo: profile.typeProy,
         informacion: profile.infoProy,
-        logo: profile.imageProy,
+        logo: file.imageProy,
         frase: profile.phraseProy,
-        audioPitch : profile.pitchProy,
+        audioPitch : file.pitchProy,
         losTengo : profile.haveProy,
         losNecesito : profile.needProy,        
-        equipo : profile.teamProy,
-    }).then(user => {
-        res.json(user)
-    });
+        equipo : profile.teamProy.split(','),
+    })
+    
+    res.json(proy)
 })
 
+router.get('/proy',async function (req, res) {
+    proy = await Proyect.findAll()
+    res.json(proy)
+});
 
 module.exports = router

@@ -10,7 +10,7 @@ Proyect.init({
 
     // },
     logros:{
-        type: S.STRING,
+        type:S.ARRAY(S.TEXT)
     },
     nombreProyecto:{
         type: S.STRING,
@@ -22,11 +22,11 @@ Proyect.init({
         type: S.STRING
     },
     audioPitch: {
-        type: S.JSON,
+        type: S.JSONB,
         unique: true
     },
     logo:{
-        type: S.JSON,
+        type: S.JSONB,
         unique: true
     },
     frase: {
