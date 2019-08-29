@@ -1,9 +1,11 @@
+import 'babel-polyfill';
 import React from 'react';
 import { Route, Redirect, Switch, Link } from 'react-router-dom';
 
 import Landing from './LandingForm'
 import MainForm from './Register/MainForm'
 import MainProy from './Proyect/MainProy'
+import Profile from './Register/Profile'
 
 class MainRouter extends React.Component {
     constructor(props) {
@@ -21,8 +23,9 @@ class MainRouter extends React.Component {
             : 
             <Switch>
                 <Route exact path='/'  component={Landing} />
-                <Route exact path='/register'  component={MainForm} />
+                <Route exact path='/register'  render= {({ history }) => (<MainForm history={history} />)} />
                 <Route exact path='/register/proyect'  component={MainProy} />
+                <Route exact path='/profile'  component={Profile} />
             </Switch>
         )
     }

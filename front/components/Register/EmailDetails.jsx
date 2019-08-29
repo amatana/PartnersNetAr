@@ -24,7 +24,6 @@ class EmailDetails extends Component{
                 <p className="pregunta">1. Confirmanos tu email</p>
                 <input
                 className="input" 
-                
                 type="text"
                 name='email'
                 onChange={this.props.handleChange}

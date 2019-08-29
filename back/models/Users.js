@@ -14,16 +14,19 @@ User.init({
         type: S.STRING,
         unique: true
     },
+    name:{
+        type: S.STRING,
+        unique: true
+    },
+    fullName : {
+        type: S.STRING
+    },
     email: {
         type: S.STRING,
         allowNull: false,
         validate: {
             isEmail: true
         },
-        unique: true
-    },
-    name:{
-        type: S.STRING,
         unique: true
     },
     username:{
@@ -33,14 +36,20 @@ User.init({
     linkedIn: {
         type: S.STRING
     },
-    fullName : {
-        type: S.STRING
+    pitch: {
+        type:S.STRING
+    },
+    biografy: {
+        type:S.STRING
+    },
+    type: {
+        type:S.STRING
+    },
+    interest: {
+        type:S.ARRAY(S.TEXT)
     },
     perfil:{
         type: S.ENUM('EMP', 'COL', 'ORG')
-    },
-    salt: {
-        type:S.STRING
     },
     password:{
         type: S.STRING,

@@ -1,14 +1,11 @@
 // Passport - manejo de loggeo y validación de usuarios
 // Configuración 
-const passport = require('passport');
 const app = require('express')()
 const User = require('../models/Users')//.default.default
 const dotenv = require('dotenv')
 dotenv.config()
 
-app.use(passport.initialize());
-app.use(passport.session())
-
+module.exports = function (passport){
 passport.serializeUser(function (user, done) {
     done(null, user.id)
 })
@@ -39,11 +36,12 @@ const FacebookStrategy = require('passport-facebook').Strategy;
 passport.use(new FacebookStrategy({
         clientID: process.env.FACEBOOK_APP_ID,
         clientSecret: process.env.FACEBOOK_APP_SECRET,
-        callbackURL: "http://localhost:8081/auth/facebook/callback"
+        callbackURL: "http://localhost:8081/auth/facebook/callback",
+        profileFields: ['id', 'email', 'gender', 'link', 'locale', 'name', 'timezone', 'updated_time', 'verified'],
         },
         async (accessToken, refreshToken, profile, done)=>{
             console.log('to search')
-            await User.findOne({where:{'id':profile.id}}).then((err,user)=>{
+            await User.findOne({where:{'id':profile.id}}).then(async(err,user)=>{
                 if(err){
                     return done(err)
                 }
@@ -56,15 +54,10 @@ passport.use(new FacebookStrategy({
                     newUser.token= accessToken
                     newUser.password= newUser.token
                     newUser.name=profile.name.givenName + ' ' + profile.name.familyName
-                    //newUser.email=profile.emails[0].value
+                    newUser.email=profile.emails[0].value
 
-                    newUser.save((err)=>{
-                        if(err){
-                            throw err;
-                        }else{
-                            done(null,newUser)
-                        }
-                    })
+                    await newUser.save()
+                    return done(null,newUser)
                 }                
             })
 
@@ -81,7 +74,7 @@ passport.use(new GoogleStrategy({
 },
      (accessToken,refreshToken,profile,done)=>{
                       
-        User.findOne({where:{'id':profile.id}}).then((err,user)=>{
+        User.findOne({where:{'id':profile.id}}).then(async(err,user)=>{
             if(err){
                 return done(err)
             }
@@ -96,15 +89,11 @@ passport.use(new GoogleStrategy({
                 newUser.name=profile.name.givenName + ' ' + profile.name.familyName
                 newUser.email=profile.emails[0].value
 
-                newUser.save((err)=>{
-                    if(err){
-                        throw err;
-                    }else{
-                        done(null,newUser)
+                await newUser.save()
+                return done(null,newUser)
+            
                     }
                 })
             }                
-        })
-
-    })
-)
+        ))
+}

@@ -14,14 +14,13 @@ class Confirmation extends Component{
         this.haveProy=haveProy
         this.needProy=needProy
         this.teamProy=teamProy
-        this.URI= 'http://localhost:8081/api/photo'
+        this.URI= 'http://localhost:8081/api/proyect'
         this.saveAndContinue = this.saveAndContinue.bind(this)
         this.back = this.back.bind(this)
     }
 
     async saveAndContinue(e){
         e.preventDefault()
-        const {values:{achievements,nameProy,typeProy,infoProy,pitchProy,imageProy,phraseProy,haveProy,needProy,teamProy}}=this.props
 
         const formData = new FormData
         formData.append('achievements',this.achievements)
@@ -45,7 +44,7 @@ class Confirmation extends Component{
         })
         const data = await res.json()
         console.log(data)
-        this.props.nextStep()
+        this.props.toproy('/profile')
         
     }
     back(e){

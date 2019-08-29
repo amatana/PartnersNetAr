@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 
 class LandingForm extends Component{
-    constructor(){
-        super()
-    }
+    constructor(props){
+        super(props)
+        
+        this.red=false
+       }
 
 
 render(){
@@ -34,8 +36,10 @@ render(){
             </Link> 
 
             <div>
-               <Link to="/auth/google"> <button style={{backgroundColor: "red",height: "40px",width: "90px",borderColor:"transparent", margin:"5px", color:"white"}}>Google</button></Link>
-               <Link to="/auth/facebook"> <button style={{backgroundColor:"lightblue", height:"40px",width:"90px",borderColor:"transparent", margin:"5px", color:"white"}}>Facebook</button></Link>
+                
+                
+                <a href="/auth/google"><button id="google" style={{backgroundColor: "red",height: "40px",width: "90px",borderColor:"transparent", margin:"5px", color:"white"}}> Google</button></a>
+               <a href="/auth/facebook"><button style={{backgroundColor:"lightblue", height:"40px",width:"90px",borderColor:"transparent", margin:"5px", color:"white"}}>Facebook</button></a>
             </div>
 
         </div>

@@ -4,12 +4,25 @@ const User = require('../models/Users')
 
 
 router.post('/crearUsuario', function (req, res) {
+    const profile =req.body
+    console.log(profile)
+    console.log(typeof(profile.interesting))
     User.create({
-        email: Math.random() + "@gmail.com",
+        id: (Math.random()*10000).toString(),
+        email: profile.email,
+        username: profile.user,
+        linkedIn: profile.linkedin,
+        biografy : profile.bio,
+        type: profile.type,
+        interest: profile.interesting.split(','),
         password: '123456',
-        linkedIn: 'ana-amat'
     }).then(user => {
-        res.send(user)
+        console.log(user)
+        if(user.dataValues.type==='TP'){
+        res.redirect('/register/proyect')
+        }else{
+            res.redirect('/profile')
+        }
     });
 })
 
@@ -18,12 +31,23 @@ router.get('/users',async function (req, res) {
     res.json(user)
 });
 
-router.post('/photo', (req,res)=>{
-    console.log("body:")
-    console.log(req.body)
-    console.log("file:")
-    console.log(req.files)
-res.json({message:'posted'})
+router.post('/proyect', (req,res)=>{
+    const profile =req.body
+    console.log(profile)
+    User.create({
+        logros: profile.achievements,        
+        nombreProyecto: profile.nameProy,
+        tipo: profile.typeProy,
+        informacion: profile.infoProy,
+        logo: profile.imageProy,
+        frase: profile.phraseProy,
+        audioPitch : profile.pitchProy,
+        losTengo : profile.haveProy,
+        losNecesito : profile.needProy,        
+        equipo : profile.teamProy,
+    }).then(user => {
+        res.json(user)
+    });
 })
 
 
