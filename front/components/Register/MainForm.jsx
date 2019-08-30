@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import React,{Component} from 'react'
 import EmailDetails from './EmailDetails'
 import UserDetails from './UserDetails'
@@ -14,18 +15,21 @@ import '../../../back/public/style.css'
 class MainForm extends Component {
     constructor(props){
         super(props)
+        
+        
 
         this.state = {
             step: 1,
             email:'',
             user:'',
-            account:'',
+            linkedin:'',
             pitch:'',
             bio:'',
             type:'',
             interesting: [],
         }
         this.withoutProyect=this.withoutProyect.bind(this)
+        this.toproy = this.toproy.bind(this)
         this.backWithoutProyect = this.backWithoutProyect.bind(this)
         this.nextStep = this.nextStep.bind(this)
         this.prevStep = this.prevStep.bind(this)
@@ -37,6 +41,10 @@ class MainForm extends Component {
         this.setState({
             step: step + 2 
         })
+    }
+
+    toproy(path){
+        this.props.history.replace(path)
     }
 
     backWithoutProyect(){
@@ -60,9 +68,7 @@ class MainForm extends Component {
     }
 
     handleChange(event){
-        console.log(event.target)
-        console.log(event.target.value)
-        console.log(event.target.attributes.name.nodeValue)
+        console.log(this.state)
         if(event.target.type !== 'checkbox'){
         this.setState({[event.target.attributes.name.nodeValue]:event.target.value})
         }
@@ -141,6 +147,7 @@ class MainForm extends Component {
                 return (<Confirmation
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
+                toproy={this.toproy}
                 values = {values}
                 />)
             case 9:

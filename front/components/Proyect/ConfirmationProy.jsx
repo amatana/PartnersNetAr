@@ -14,17 +14,20 @@ class Confirmation extends Component{
         this.haveProy=haveProy
         this.needProy=needProy
         this.teamProy=teamProy
-        this.URI= 'http://localhost:8081/api/photo'
+        this.URI= 'http://localhost:8081/api/proyect'
         this.saveAndContinue = this.saveAndContinue.bind(this)
         this.back = this.back.bind(this)
     }
 
     async saveAndContinue(e){
         e.preventDefault()
-        const {values:{achievements,nameProy,typeProy,infoProy,pitchProy,imageProy,phraseProy,haveProy,needProy,teamProy}}=this.props
 
+        let achiev = []
+        this.achievements.forEach((set)=>{
+            achiev.push(set)
+        })
         const formData = new FormData
-        formData.append('achievements',this.achievements)
+        formData.append('achievements',achiev)
         formData.append('nameProy',this.nameProy)
         formData.append('typeProy',this.typeProy)
         formData.append('infoProy',this.infoProy)
@@ -34,18 +37,15 @@ class Confirmation extends Component{
         formData.append('haveProy',this.haveProy)
         formData.append('needProy',this.needProy)
         formData.append('teamProy',this.teamProy)
-
+        console.log(this.pitchProy)
         console.log('finish',formData)
         const res = await fetch(this.URI,{
             method: 'POST',
             body: formData,
-            // headers: {
-            //     'content-type': 'multipart/form-data'
-            // }
         })
         const data = await res.json()
         console.log(data)
-        this.props.nextStep()
+        this.props.toproy('/profile')
         
     }
     back(e){
