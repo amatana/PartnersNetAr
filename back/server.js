@@ -58,9 +58,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sessionStore = new SequelizeStore({ db })
 app.use(session({
     secret: 'partners-session',
-    store: new SequelizeStore({
-      db,
-    }),
+    store: sessionStore,
     resave: false, 
     proxy: true,
     saveUninitialized: true,
@@ -69,6 +67,7 @@ app.use(session({
 
 
 app.get('/*', function (req, res) {
+    console.log(req.session)
     res.sendFile(path.join(__dirname, ('./public/index.html')))
 })
 
@@ -77,7 +76,7 @@ app.get('/*', function (req, res) {
 //PARA EL INICIO DE SESIONES CUANDO SE LEVANTA EL SERVIDOR
 sessionStore.sync()
     .then(() => {
-        db.sync({ force: false }).then(() => {
+        db.sync({ force: true }).then(() => {
             app.listen(process.env.PORT, () => console.log('Server is listening on port: ' + process.env.PORT))
         })
     });
