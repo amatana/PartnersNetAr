@@ -5,8 +5,6 @@ import { Link, Redirect } from 'react-router-dom'
 class LandingForm extends Component{
     constructor(props){
         super(props)
-        
-        this.red=false
        }
 
 
