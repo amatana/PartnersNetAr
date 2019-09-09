@@ -33,7 +33,7 @@ app.use(passport.session())
 
 app.use(multer({
     storage,
-    dest: 'public/uploads',
+    dest: path.join(__dirname, '../public/uploads'),
     fileFilter:(req,file,cb)=>{
         const filetypes = /jpeg|jpg|png|gif|aac|aif|flac|iff|m4a|m4b|mid|midi|mp3|mpa|mpc|oga|ogg|ra|ram|snd|wav|wma/
         const mimetype = filetypes.test(file.mimetype)

@@ -1,0 +1,32 @@
+.button {
+	background: #505adc;
+	padding: 10px;
+	text-align: center;
+	border-radius: 40px;
+	color: #ffffff;
+	width: 145px;
+	display: inline-block;
+	cursor: pointer;
+	margin-right: 20px;
+}
+
+.button:hover {
+	background: #6e78fa;
+}
+
+.button-outline {
+	background: #ffffff;
+	border: 1px solid #3b3b3b;
+	padding: 10px;
+	text-align: center;
+	border-radius: 40px;
+	width: 145px;
+	display: inline-block;
+	cursor: pointer;
+	margin-right: 20px;
+}
+
+.button-outline:hover {
+	border: 1px solid #a5a5a5;
+	color: #a5a5a5;
+}

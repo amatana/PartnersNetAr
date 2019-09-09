@@ -1,0 +1,46 @@
+.partners {
+	width: 120px;
+	height: 100%;
+    padding-top: 20px;
+    box-sizing: border-box;
+    text-align: center;
+	float: left;
+	position: fixed;
+	background: #0505ad;
+	background: linear-gradient(45deg, #0505ad 0%, #5577ff 80%);
+}
+
+.content {
+	width: calc(100% - 120px); 
+	float: left;
+	background: #ffffff;
+	margin-left: 120px;
+}
+
+.center {
+	width: 36%; 
+	margin: 1%; 
+	padding: 1%; 
+	float: left;
+}
+
+.aside {
+	width: 28%;
+	margin: 1%;
+	float: left;
+}
+
+.aside2 {
+	width: 28%;
+	margin: 1%;
+	float: left;
+}
+
+.Box-content {
+	border-radius: 20px;
+	padding: 20px; 
+	-webkit-box-shadow: 2px 0px 17px -2px rgba(204,204,204,1);
+	-moz-box-shadow: 2px 0px 17px -2px rgba(204,204,204,1);
+	box-shadow: 2px 0px 17px -2px rgba(204,204,204,1); 
+	margin-bottom: 20px;
+}
