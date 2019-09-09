@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Felicitaciones from '../Project/Felicitaciones'
+import Felicitaciones from './Felicitaciones'
 
 class TypeProy extends Component{
     constructor(props){
