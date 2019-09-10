@@ -9,7 +9,7 @@ import Profile from "./Profile";
 import ListaComponent from "./ListaReut";
 import HaveNeed from "./HaveNeed";
 import Social from "./Social";
-import Proyect from "./Project";
+import Project from "./Project";
 import Info from "./Info";
 import "../../back/public/css/style.css";
 
@@ -38,7 +38,7 @@ class MainRouter extends React.Component {
         <Route exact path="/listComp" component={ListaComponent} />
         <Route exact path="/haveNeed" component={HaveNeed} />
         <Route exact path="/social" component={Social} />
-        <Route exact path="/proyect" component={Proyect} />
+        <Route exact path="/project" component={Project} />
         <Route exact path="/info" component={Info} />
       </Switch>
     );

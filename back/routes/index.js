@@ -23,7 +23,6 @@ router.get('/auth/google/callback',
 router.get('/auth/facebook',passport.authenticate('facebook',{scope:['user_photos','user_location','user_age_range','email']}))
 
 router.get('/auth/facebook/callback',()=>{
-    console.log(req.session)
     passport.authenticate('facebook', {successRedirect:'/register',
                                             failureRedirect: '/'})
 })

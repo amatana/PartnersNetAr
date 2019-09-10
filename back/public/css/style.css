@@ -3,14 +3,78 @@
 @import url("_buttons.css");
 @import url("_grids.css");
 
+i{
+  font-family: "FontAwesome"
+}
+
 html,
 body {
   height: 100%;
   width: 100%;
 }
 
-#root {
+.overlay{
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left:0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.overlay.active{
+  visibility: visible;
+}
+
+.popup{
+  background-color: #f8f8f8;
+  box-shadow: 0px 1px 5px 0px rgba(0 , 0, 0, .4);
+  border-radius: 3px;
+  font-family: "Nunito";
+  padding: 28px;
+  text-align: center;
+  widows: 600px;
+  opacity: 0;
+  transition: .3s ease all;
+  transform: scale(0.7)
+}
+
+.popup.active{
+  opacity: 1;
+  transform: scale(1);
+
+}
+
+.btn-cerrar{
+  font-size: 16px;
+  line-height: 16px;
+  display: block;
+  text-align: right;
+  color: #BBBBBB;
+  transition: .3s ease all;
+}
+
+.btn-cerrar:hover{
+  color: #000
+}
+
+.popup button{
+  display: block;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.popup a{
+  text-decoration: none;
+}
+
+#app {
   height: inherit;
+  width: inherit;
 }
 
 .tituloProyecto {
@@ -23,12 +87,12 @@ body {
   width: 10%;
 }
 
-.landingBackground {
+/* .landingBackground {
   min-height: 100%;
   min-width: 100%;
   background-color: blue;
   text-align: center;
-}
+} */
 
 .partners {
   border: 2px solid #fff;

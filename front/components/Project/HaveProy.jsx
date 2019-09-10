@@ -27,7 +27,7 @@ render(){
     <div>
         <Felicitaciones/>
         <form action="">
-            <p className="pregunta">7. Enumera los âtengoâ del proyecto hasta ahora</p>
+            <p className="pregunta">7. Enumera los "tengo" del proyecto hasta ahora</p>
             <textarea 
             className="textarea"
             type="text"
