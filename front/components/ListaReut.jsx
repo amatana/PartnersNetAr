@@ -15,3 +15,5 @@ const List = ({ list = [], title }) => (
     ))}
   </div>
 );
+
+export default List;
