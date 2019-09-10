@@ -8,10 +8,14 @@ export default ({ list = [], title }) => (
       <div key={key++} className="gridPhoto">
         <div className="roundedPhoto colorTrial" />
         <div className="textList">
+
+          <h2>Nombre de la Cosa</h2>
           <h2>{item}</h2>
+
           <p>Especialidad</p>
         </div>
       </div>
     ))}
   </div>
 );
+
