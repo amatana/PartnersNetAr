@@ -37,7 +37,12 @@ class MainProy extends Component {
         this.handleInterest = this.handleInterest.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.handleFile = this.handleFile.bind(this)
+        this.toproy = this.toproy.bind(this)
         
+    }
+
+    toproy(path){
+        this.props.history.replace(path)
     }
 
     nextStep(){

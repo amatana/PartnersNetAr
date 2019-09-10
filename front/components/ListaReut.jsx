@@ -1,14 +1,17 @@
 import React from "react";
 
-const List = ({ list = [], title }) => (
-  <div className="paddingGral">
+export default ({ list = [], title }) => (
+  <div >
     <h2 className="listTitle">{title || "List Title"}</h2>
 
     {list.map((item, key) => (
       <div key={key++} className="gridPhoto">
         <div className="roundedPhoto colorTrial" />
         <div className="textList">
+
           <h2>Nombre de la Cosa</h2>
+          <h2>{item}</h2>
+
           <p>Especialidad</p>
         </div>
       </div>
@@ -16,4 +19,3 @@ const List = ({ list = [], title }) => (
   </div>
 );
 
-export default List;

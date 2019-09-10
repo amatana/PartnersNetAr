@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import Felicitaciones from '../Project/Felicitaciones'
 
-class TypeProy extends Component{
+
+class NameProy extends Component{
     constructor(props){
         super(props)
 
@@ -14,30 +14,34 @@ class TypeProy extends Component{
         this.props.nextStep()
         
     }
+
     back(e){
         e.preventDefault()
         this.props.prevStep()
     }
-
 
     render(){
         const {values}=this.props
         
         return(
         <div>
-            <Felicitaciones/>
+            <h1 className="bienvenido">Ahora</h1>
+            <p className="name">Contanos un poco mas</p>
+            <p className="conocernos">Contanos de que se trata para que la comunidad pueda colaborar</p>
+
             <form action="">
-                <p  className="pregunta">2. Tipo de proyecto</p>
-                <input 
-                className="input"
+                <p className="pregunta">1. Nombre del proyecto</p>
+                <input
+                className="input" 
+                
                 type="text"
-                name="typeProy"
+                name="nameProy"
                 onChange={this.props.handleChange}
-                defaultValue={values.user} />
+                defaultValue={values.email} />
                 <div>
                     <button className="back" onClick={this.back} >Ver pregunta anterior</button>
                     <button className="continuar" onClick={this.saveAndContinue}>Siguiente Pregunta</button>
-               </div>
+                </div>
             </form>
         </div>
         )
@@ -46,4 +50,4 @@ class TypeProy extends Component{
     }
 }
 
-export default TypeProy
+export default NameProy
