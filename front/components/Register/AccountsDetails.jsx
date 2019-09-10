@@ -27,13 +27,13 @@ class TypeProy extends Component{
         <div>
             <Felicitaciones/>
             <form action="">
-                <p  className="pregunta">2. Tipo de proyecto</p>
+                <p  className="pregunta">3. LinkedIn</p>
                 <input 
                 className="input"
                 type="text"
                 name="typeProy"
                 onChange={this.props.handleChange}
-                defaultValue={values.user} />
+                defaultValue={values.linkedin} />
                 <div>
                     <button className="back" onClick={this.back} >Ver pregunta anterior</button>
                     <button className="continuar" onClick={this.saveAndContinue}>Siguiente Pregunta</button>

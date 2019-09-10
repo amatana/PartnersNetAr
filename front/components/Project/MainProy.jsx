@@ -30,11 +30,16 @@ class MainProy extends Component {
       teamProy: []
     };
 
+    this.toproy = this.toproy.bind(this);
     this.nextStep = this.nextStep.bind(this);
     this.prevStep = this.prevStep.bind(this);
     this.handleInterest = this.handleInterest.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleFile = this.handleFile.bind(this);
+  }
+
+  toproy(path) {
+    this.props.history.replace(path);
   }
 
   nextStep() {
@@ -212,6 +217,7 @@ class MainProy extends Component {
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             withoutProyect={this.backWithoutProyect}
+            toproy={this.toproy}
             values={values}
           />
         );

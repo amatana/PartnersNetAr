@@ -39,7 +39,7 @@ class TypeDetails extends Component{
         <div>
             <Welcome/>
             <form>
-                <p className="pregunta">3. QuÃ© tipo de emprendedor sos?</p>
+                <p className="pregunta">3. Qué tipo de emprendedor sos?</p>
 
                 <option 
                 type='button'

@@ -4,68 +4,64 @@ import { Link, Redirect } from "react-router-dom";
 class LandingForm extends Component {
   constructor(props) {
     super(props);
+    // btnAbrir = document.getElementbyId('join-register'),
+    
+    // cerrarPopup = document.getElementById('btn-cerrar');
+    this.registrarse=this.registrarse.bind(this)
+    this.cerrarPop=this.cerrarPop.bind(this)
 
-    this.red = false;
   }
+  registrarse(){
+    let overlay = document.getElementsByClassName('overlay')[0],
+    popup = document.getElementsByClassName('popup')[0]
+    overlay.classList.add('active')
+    popup.classList.add('active')
+    
+  }
+
+  cerrarPop(){
+    let overlay = document.getElementsByClassName('overlay')[0],
+    popup = document.getElementsByClassName('popup')[0]
+    overlay.classList.remove('active')
+    popup.classList.remove('active')
+  }
+
 
   render() {
     return (
-      <div className="landingBackground">
-        <button className="partners">
-          <p>Partners</p>
-        </button>
+<div className="content">
+		<div className="center">
+			<img src="../img/partnersBN.svg"  width="90px" height="35px" alt="Partners"/>
+			<h1>
+				Build together,<br/>
+				<b>Ship together.</b>
+			</h1>
+			<p>
+				Partners es una red social colaborativa que conecta emprendedores con ganas de crecer y y potenciar sus proyectos.<br/>
+				En este espacio vas a poder compartir tus proyectos, dar y recibir feedback de otros emprendedores. Intercambiar conocimientos y promover una cultura colaborativa.
+			</p>
+			<div className="button-outline">Quiero saber mas</div>
+			<div className="button " id="join-register" onClick={this.registrarse}>Quiero unirme</div>
+		</div>
 
-        <p className="seEncontraron">
-          Se encontraron y fue sociedad a
-          <strong className="primeraVista"> primera vista</strong>
-        </p>
+  <div className="overlay">
+    <div className="popup">
+      <a href="#" id="btn-cerrar" className="btn-cerrar" onClick={this.cerrarPop}><i className="fas fa-times"></i></a>
+            <a href="/auth/google">
+              <button className="loginBtn loginGoogle"
+                id="google">
+               Registrate con Google
+              </button>
+            </a>
+            <a href="/auth/facebook">
+              <button className="loginBtn loginFacebook">
+               Registrate con Facebook
+              </button>
+            </a>
+    </div>
+  </div>
+</div>
 
-        <p className="partner">
-          Partner es una red social colaborativa que conecta emprendedores con
-          ganas de crecer y potenciar sus proyectos. Tenes una idea, una
-          pregunta, algo para compartir? Este es tu lugar, bienvenido a esta
-          comunidad!
-        </p>
-
-        <Link to="/register">
-          <button className="rectangleComenzar">
-            <p className="comenzar">Comenzar</p>
-          </button>
-        </Link>
-
-        <div>
-          <a href="/auth/google">
-            <button
-              id="google"
-              style={{
-                backgroundColor: "red",
-                height: "40px",
-                width: "90px",
-                borderColor: "transparent",
-                margin: "5px",
-                color: "white"
-              }}
-            >
-              {" "}
-              Google
-            </button>
-          </a>
-          <a href="/auth/facebook">
-            <button
-              style={{
-                backgroundColor: "lightblue",
-                height: "40px",
-                width: "90px",
-                borderColor: "transparent",
-                margin: "5px",
-                color: "white"
-              }}
-            >
-              Facebook
-            </button>
-          </a>
-        </div>
-      </div>
     );
   }
 }
