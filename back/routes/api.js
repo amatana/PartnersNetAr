@@ -26,10 +26,16 @@ router.post('/crearUsuario', function (req, res) {
     });
 })
 
+router.get('/users/user', (req,res) => {
+    User.findByPk(req.session.passport.user)
+    .then(data => res.send(data))
+})
+
 router.get('/users',async function (req, res) {
     user = await User.findAll()
     res.json(user)
 });
+
 
 router.post('/proyect',async (req,res)=>{
     const profile =req.body
