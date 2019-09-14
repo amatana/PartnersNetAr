@@ -12,6 +12,8 @@ import Social from "./Social";
 import Proyect from "./Project";
 import Info from "./Info";
 import "../../back/public/css/style.css";
+import { fetchUser, getAllUsers } from '../redux/actions/index'
+import {connect} from 'react-redux';
 
 class MainRouter extends React.Component {
   constructor(props) {
@@ -22,9 +24,15 @@ class MainRouter extends React.Component {
     };
   }
 
+  componentDidMount(){
+    this.props.getAllUsers()
+    this.props.fetchUser()
+    .then(()=> this.setState({isRegistered : true}))
+  }
+
   render() {
     return this.state.isRegistered ? (
-      "AcÃ¡ irÃ­a el component del Home que verÃ­a el usuario que ya estÃ¡ loggeado, faltarÃ­a poner un ComponentDidMount que haga que cuando se carga el MainRouter pregunte si el usuario estÃ¡ registrado y logeado o no"
+      "Acá va el componente de HOME, falta poner un ComponentDidMount que haga que cuando se carga el MainRouter pregunte si el usuario estÃ¡ registrado y logeado o no"
     ) : (
       <Switch>
         <Route exact path="/" component={Landing} />
@@ -45,4 +53,13 @@ class MainRouter extends React.Component {
   }
 }
 
-export default MainRouter;
+const mapStateToProps = (state) => ({
+  user: state.user,
+  users : state.users
+});
+const mapDispatchToProps = (dispatch) => ({
+  fetchUser: () => dispatch((fetchUser())),
+  getAllUsers: () => dispatch((getAllUsers()))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainRouter);
