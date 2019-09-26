@@ -6,7 +6,7 @@
 i{
   font-family: "FontAwesome"
 }
-
+/* 
 html,
 body {
   height: 100%;
@@ -93,7 +93,7 @@ body {
   background-color: blue;
   text-align: center;
 } */
-
+/*
 .partners {
   border: 2px solid #fff;
   border-radius: 4px;
@@ -124,7 +124,7 @@ body {
   color: #ffffff;
   font-size: 36px;
   line-height: 40px;
-  /*text-Align:center;*/
+  /*text-Align:center;*//*
   margin: auto;
   font-family: "Nunito";
 }
@@ -136,7 +136,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   /*text-Align:center;
-    */
+    *//*
   margin: auto;
   margin-top: 20px;
   font-family: "Nunito";
@@ -144,7 +144,7 @@ body {
 
 .rectangleComenzar {
   height: 44px;
-  /* width: 288px; */
+  /* width: 288px; *//*
   border: 2px solid #ef4166;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0);
@@ -159,7 +159,7 @@ body {
   line-height: 19px;
   font-family: "Nunito";
 }
-
+*/
 [type="checkbox"] {
   display: none;
 }
@@ -200,18 +200,18 @@ body {
   -moz-column-count: 2; /* Firefox */
   column-count: 2;
 
-  /* -webkit-column-gap: 20px; /* Chrome, Safari, Opera */
-  /*-moz-column-gap: 20px; /* Firefox */
-  /*column-gap: 20px; */
+   -webkit-column-gap: 20px; /* Chrome, Safari, Opera */
+  -moz-column-gap: 20px; /* Firefox */
+  column-gap: 20px;
 
-  /*-webkit-column-gap: 2rem; /* Chrome, Safari, Opera */
-  /*-moz-column-gap: 2rem; /* Firefox */
-  /*column-gap: 2rem;*/
+  -webkit-column-gap: 2rem; /* Chrome, Safari, Opera */
+  -moz-column-gap: 2rem; /* Firefox */
+  column-gap: 2rem;
 }
-
+/*
 .pregunta {
   height: 22px;
-  /*width: 171px;*/
+  /*width: 171px;*//*
   color: #9b9b9b;
   font-family: "Helvetica";
   font-size: 18px;
@@ -251,25 +251,25 @@ body {
   line-height: 19px;
   text-align: center;
 }
-
+*/
 .boxList {
-  margin: 0.2em;
-  border: 0.16em solid #ef4166;
-  border-radius: 4px;
   position: relative;
-  display: inline-block;
-}
-
-.textList {
-  background-color: #fbfbff;
-  color: #ef4166;
+  background: #eee;
   text-align: center;
+  border-radius: 50px;
+  display: inline-block;
+  border: transparent;
   vertical-align: middle;
   font-weight: 600;
   margin: 0.5em;
   font-family: "Nunito";
+  min-width: 80px;
 }
 
+.textList {
+  margin: 0.5em;
+}
+/*
 .bienvenido {
   font-family: "Nunito";
   color: #044087;
@@ -303,7 +303,7 @@ body {
 
 .continuar {
   /* height: 72px;
-    width: 82px; */
+    width: 82px; *//*
   color: #044087;
   font-size: 18px;
   line-height: 36px;
@@ -315,7 +315,7 @@ body {
 .continuar:after {
   padding-left: 1em;
   /* border: solid 1px #9e9e9e;
-    border-radius:50%; */
+    border-radius:50%; *//*
   color: #ef4166;
   content: "\f061";
   font-family: "FontAwesome";
@@ -323,7 +323,7 @@ body {
 
 .back {
   /* height: 72px;
-    width: 82px; */
+    width: 82px; *//*
   color: #9b9b9b;
   font-size: 18px;
   line-height: 36px;
@@ -335,7 +335,7 @@ body {
 .back:before {
   padding-right: 1em;
   /* border: solid 1px #9e9e9e;
-    border-radius:50%; */
+    border-radius:50%; *//*
   color: #9b9b9b;
   content: "\f060";
   font-family: "FontAwesome";
@@ -351,7 +351,7 @@ option[selected] {
 
 .claseProyecto {
   /* height: 48px;
-    	width: 273px; */
+    	width: 273px; *//*
   color: #333333;
   font-size: 14px;
   font-style: italic;
@@ -390,18 +390,18 @@ option[selected] {
 
 .queTengo {
   /* height: 120px;
-    	width: 225px; */
+    	width: 225px; *//*
   color: rgb(163, 130, 130);
   font-size: 14px;
-  /* line-height: 30px; */
+  /* line-height: 30px; *//*
   font-family: "Nunito";
 }
 .queNecesito {
   /* height: 120px;
-    	width: 225px; */
+    	width: 225px; *//*
   color: #4a4a4a;
   font-size: 14px;
-  /* line-height: 30px; */
+  /* line-height: 30px; *//*
   font-family: "Nunito";
 }
 
@@ -456,7 +456,7 @@ option[selected] {
   background-color: transparent;
   font-family: "FontAwesome";
 }
-
+*/
 .inputFile {
   height: 45px;
   width: 331px;
@@ -478,7 +478,7 @@ option[selected] {
   font-size: 14px;
   font-family: "Helvetica";
 }
-
+/*
 .gridPhoto {
   display: grid;
   grid-template-columns: 0.3fr 0.7fr;
@@ -504,7 +504,7 @@ option[selected] {
   width: 5em;
   justify-self: center;
 }
-
+*//*
 .textList {
   justify-self: left;
   align-self: center;
@@ -522,8 +522,8 @@ option[selected] {
   text-align: left;
   margin: 0;
   font-size: 1.15em;
-}
-
+}*/
+/*
 .listTitle {
   padding-left: 1%;
 }
@@ -571,8 +571,9 @@ option[selected] {
 
 ul#bullet-check {
   list-style-image: url("../public/bullet-check.jpg");
-} */
+} *//*
 
 li {
   margin-top: 5px;
-}
+} */
+
