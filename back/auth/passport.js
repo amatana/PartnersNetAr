@@ -3,7 +3,7 @@
 const app = require('express')()
 const User = require('../models/Users')//.default.default
 // const dotenv = require('dotenv')
-dotenv.config()
+// dotenv.config()
 
 module.exports = function (passport){
 passport.serializeUser(function (user, done) {
