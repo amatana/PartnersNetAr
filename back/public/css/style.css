@@ -177,8 +177,8 @@ body {
 
 .checkboxes:before {
   content: " ";
-  border: solid 1px #9e9e9e;
-  border-radius: 50%;
+  background-color: #eaeaea;
+  /* border: solid 1px #9e9e9e; */
   width: 0.9em;
   height: 0.9em;
   position: absolute;
