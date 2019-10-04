@@ -2,7 +2,7 @@
 // Configuración 
 const app = require('express')()
 const User = require('../models/Users')//.default.default
-const dotenv = require('dotenv')
+// const dotenv = require('dotenv')
 dotenv.config()
 
 module.exports = function (passport){
