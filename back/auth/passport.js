@@ -32,68 +32,68 @@ passport.use(new localStrategy(
 
 
 //Estrategia Facebook de Autorización
-// const FacebookStrategy = require('passport-facebook').Strategy;
-// passport.use(new FacebookStrategy({
-//         clientID: '2390857660990217',//process.env.FACEBOOK_APP_ID,
-//         clientSecret: process.env.FACEBOOK_APP_SECRET,
-//         callbackURL: "http://localhost:8081/auth/facebook/callback",
-//         profileFields: ['id', 'email', 'gender', 'link', 'locale', 'name', 'timezone', 'updated_time', 'verified'],
-//         },
-//         async (accessToken, refreshToken, profile, done)=>{
-//             console.log('to search')
-//             await User.findOne({where:{'id':profile.id}}).then(async(err,user)=>{
-//                 if(err){
-//                     return done(err)
-//                 }
-//                 if(user){
-//                     return done(null,user)
-//                 }else{
-//                     console.log(profile)
-//                     let newUser = new User()
-//                     newUser.id=profile.id
-//                     newUser.token= accessToken
-//                     newUser.password= newUser.token
-//                     newUser.name=profile.name.givenName + ' ' + profile.name.familyName
-//                     newUser.email=profile.emails[0].value
+const FacebookStrategy = require('passport-facebook').Strategy;
+passport.use(new FacebookStrategy({
+        clientID: '2390857660990217',//process.env.FACEBOOK_APP_ID,
+        clientSecret: process.env.FACEBOOK_APP_SECRET,
+        callbackURL: "http://localhost:8081/auth/facebook/callback",
+        profileFields: ['id', 'email', 'gender', 'link', 'locale', 'name', 'timezone', 'updated_time', 'verified'],
+        },
+        async (accessToken, refreshToken, profile, done)=>{
+            console.log('to search')
+            await User.findOne({where:{'id':profile.id}}).then(async(err,user)=>{
+                if(err){
+                    return done(err)
+                }
+                if(user){
+                    return done(null,user)
+                }else{
+                    console.log(profile)
+                    let newUser = new User()
+                    newUser.id=profile.id
+                    newUser.token= accessToken
+                    newUser.password= newUser.token
+                    newUser.name=profile.name.givenName + ' ' + profile.name.familyName
+                    newUser.email=profile.emails[0].value
 
-//                     await newUser.save()
-//                     return done(null,newUser)
-//                 }                
-//             })
+                    await newUser.save()
+                    return done(null,newUser)
+                }                
+            })
 
-//         })
-//     )
+        })
+    )
 
 
 //Estrategia Google de Autorización
-// const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-// passport.use(new GoogleStrategy({
-//     clientID: '1074376494014-8j1okjpiokssu1ijkui4uqhlpghkikr9.apps.googleusercontent.com',//process.env.GOOGLE_CONSUMER_KEY,
-//     clientSecret: process.env.GOOGLE_CONSUMER_SECRET,
-//     callbackURL: "http://localhost:8081/auth/google/callback"
-// },
-//      (accessToken,refreshToken,profile,done)=>{
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+passport.use(new GoogleStrategy({
+    clientID: '1074376494014-8j1okjpiokssu1ijkui4uqhlpghkikr9.apps.googleusercontent.com',//process.env.GOOGLE_CONSUMER_KEY,
+    clientSecret: process.env.GOOGLE_CONSUMER_SECRET,
+    callbackURL: "http://localhost:8081/auth/google/callback"
+},
+     (accessToken,refreshToken,profile,done)=>{
                       
-//         User.findOne({where:{'id':profile.id}}).then(async(err,user)=>{
-//             if(err){
-//                 return done(err)
-//             }
-//             if(user){
-//                 return done(null,user)
-//             }else{
-//                 //console.log(profile)
-//                 let newUser = new User()
-//                 newUser.id=profile.id
-//                 newUser.token= accessToken
-//                 newUser.password = newUser.token
-//                 newUser.name=profile.name.givenName + ' ' + profile.name.familyName
-//                 newUser.email=profile.emails[0].value
+        User.findOne({where:{'id':profile.id}}).then(async(err,user)=>{
+            if(err){
+                return done(err)
+            }
+            if(user){
+                return done(null,user)
+            }else{
+                //console.log(profile)
+                let newUser = new User()
+                newUser.id=profile.id
+                newUser.token= accessToken
+                newUser.password = newUser.token
+                newUser.name=profile.name.givenName + ' ' + profile.name.familyName
+                newUser.email=profile.emails[0].value
 
-//                 await newUser.save()
-//                 return done(null,newUser)
+                await newUser.save()
+                return done(null,newUser)
             
-//                     }
-//                 })
-//             }                
-//         ))
+                    }
+                })
+            }                
+        ))
 }
