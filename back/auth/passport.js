@@ -32,37 +32,37 @@ passport.use(new localStrategy(
 
 
 //Estrategia Facebook de Autorización
-const FacebookStrategy = require('passport-facebook').Strategy;
-passport.use(new FacebookStrategy({
-        clientID: '2390857660990217',//process.env.FACEBOOK_APP_ID,
-        clientSecret: process.env.FACEBOOK_APP_SECRET,
-        callbackURL: "http://localhost:8081/auth/facebook/callback",
-        profileFields: ['id', 'email', 'gender', 'link', 'locale', 'name', 'timezone', 'updated_time', 'verified'],
-        },
-        async (accessToken, refreshToken, profile, done)=>{
-            console.log('to search')
-            await User.findOne({where:{'id':profile.id}}).then(async(err,user)=>{
-                if(err){
-                    return done(err)
-                }
-                if(user){
-                    return done(null,user)
-                }else{
-                    console.log(profile)
-                    let newUser = new User()
-                    newUser.id=profile.id
-                    newUser.token= accessToken
-                    newUser.password= newUser.token
-                    newUser.name=profile.name.givenName + ' ' + profile.name.familyName
-                    newUser.email=profile.emails[0].value
+// const FacebookStrategy = require('passport-facebook').Strategy;
+// passport.use(new FacebookStrategy({
+//         clientID: '2390857660990217',//process.env.FACEBOOK_APP_ID,
+//         clientSecret: process.env.FACEBOOK_APP_SECRET,
+//         callbackURL: "http://localhost:8081/auth/facebook/callback",
+//         profileFields: ['id', 'email', 'gender', 'link', 'locale', 'name', 'timezone', 'updated_time', 'verified'],
+//         },
+//         async (accessToken, refreshToken, profile, done)=>{
+//             console.log('to search')
+//             await User.findOne({where:{'id':profile.id}}).then(async(err,user)=>{
+//                 if(err){
+//                     return done(err)
+//                 }
+//                 if(user){
+//                     return done(null,user)
+//                 }else{
+//                     console.log(profile)
+//                     let newUser = new User()
+//                     newUser.id=profile.id
+//                     newUser.token= accessToken
+//                     newUser.password= newUser.token
+//                     newUser.name=profile.name.givenName + ' ' + profile.name.familyName
+//                     newUser.email=profile.emails[0].value
 
-                    await newUser.save()
-                    return done(null,newUser)
-                }                
-            })
+//                     await newUser.save()
+//                     return done(null,newUser)
+//                 }                
+//             })
 
-        })
-    )
+//         })
+//     )
 
 
 //Estrategia Google de Autorización
