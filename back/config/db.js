@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 // const dotenv = require('dotenv')
-dotenv.config()
+// dotenv.config()
 
 // const sequelize = new Sequelize('postgres://localhost:salt.db.elephantsql.com/dbpartners', {logging : false})
 const sequelize = new Sequelize('postgres://pdkpqwbq:fQUs4kAnOfMjFHR2gkzsDNRNMviJBEDF@salt.db.elephantsql.com:5432/pdkpqwbq')
