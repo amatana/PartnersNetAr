@@ -13,7 +13,7 @@ class PersonalDetails extends Component{
     
       saveAndContinue(e){
         e.preventDefault()
-        input = this.props.list
+        input = 'novacio'
         console.log(input)
         if(input != ''){
             console.log('Continue')
@@ -41,7 +41,7 @@ class PersonalDetails extends Component{
         const {values}=this.props
         const interest =values.interesting
 
-        this.props.list = interest.map((interest,i)=>{
+        const list = interest.map((interest,i)=>{
             return(
             <div key={i} className="boxList">
             <p className="textList"
