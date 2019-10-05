@@ -13,9 +13,9 @@ class PersonalDetails extends Component{
     
       saveAndContinue(e){
         e.preventDefault()
-        input = 'novacio'
-        console.log(input)
-        if(input != ''){
+        input = document.getElementsByClassName(boxList)
+        console.log(input.length)
+        if(input.length != 0){
             console.log('Continue')
             this.props.nextStep()
         }else{
