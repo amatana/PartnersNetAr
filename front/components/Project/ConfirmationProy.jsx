@@ -66,8 +66,8 @@ class Confirmation extends Component{
                     <li className="confirmList">Name: {nameProy}</li>
                     <li className="confirmList">Type: {typeProy}</li>
                     <li className="confirmList">Info: {infoProy}</li>
-                    <li className="confirmList">Pitch: {pitchProy.name}</li>
-                    <li className="confirmList">Image: {imageProy.name}</li>
+                    <li className="confirmList">Pitch: {pitchProy?pitchProy.name:''}</li>
+                    <li className="confirmList">Image: {imageProy?imageProy.name:''}</li>
                     <li className="confirmList">Phrase: {phraseProy}</li>
                     <li className="confirmList">Have: {haveProy}</li>
                     <li className="confirmList">Need: {needProy}</li>

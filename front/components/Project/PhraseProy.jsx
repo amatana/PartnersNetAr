@@ -11,8 +11,17 @@ class PhraseProy extends Component{
 
     saveAndContinue(e){
         e.preventDefault()
-        this.props.nextStep()
-        
+        const input = document.getElementsByClassName('input')[0]
+        // console.log(input)
+        if(input.value != ''){
+            // console.log('Continue')
+            this.props.nextStep()
+        }else{
+            // console.log('dont continue')
+            input.style.color = 'red'
+            input.placeholder = 'please, complete this'
+            input.style.borderBottomColor = 'red'
+        }
     }
     back(e){
         e.preventDefault()
