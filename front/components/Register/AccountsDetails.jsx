@@ -30,9 +30,9 @@ class TypeProy extends Component{
                 <input 
                 className="input"
                 type="text"
-                name="typeProy"
+                name="account"
                 onChange={this.props.handleChange}
-                defaultValue={values.linkedin} 
+                defaultValue={values.account} 
                 />
                 <div>
                     <button className="back" onClick={this.back} >Ver pregunta anterior</button>
