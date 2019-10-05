@@ -13,7 +13,7 @@ class PersonalDetails extends Component{
     
       saveAndContinue(e){
         e.preventDefault()
-        input = document.getElementsByClassName(boxList)
+        input = document.getElementsByClassName('boxList')
         console.log(input.length)
         if(input.length != 0){
             console.log('Continue')
@@ -35,6 +35,8 @@ class PersonalDetails extends Component{
         const input= document.getElementById('inpInt')
         this.props.handleInterest(input)
         input.value= ''
+        input = document.getElementsByClassName('boxList')
+        console.log(input.length)
     }
 
     render(){
