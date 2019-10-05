@@ -19,7 +19,7 @@ class EmailDetails extends Component{
         }else{
             // console.log('dont continue')
             input.style.color = 'red'
-            input.value = 'please, complete this'
+            input.placeholder = 'please, complete this'
             input.style.borderBottomColor = 'red'
         }
     }
