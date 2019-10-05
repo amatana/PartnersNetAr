@@ -20,9 +20,9 @@ class PersonalDetails extends Component{
             this.props.nextStep()
         }else{
             console.log('dont continue')
-            input.style.color = 'red'
-            input.placeholder = 'please, complete this'
-            input.style.borderBottomColor = 'red'
+            input[0].style.color = 'red'
+            input[0].placeholder = 'please, complete this'
+            input[0].style.borderBottomColor = 'red'
         }
     }
     back(e){
@@ -35,8 +35,6 @@ class PersonalDetails extends Component{
         const input= document.getElementById('inpInt')
         this.props.handleInterest(input)
         input.value= ''
-        input = document.getElementsByClassName('boxList')
-        console.log(input.length)
     }
 
     render(){
