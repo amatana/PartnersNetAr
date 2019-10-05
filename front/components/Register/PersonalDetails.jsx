@@ -20,9 +20,10 @@ class PersonalDetails extends Component{
             this.props.nextStep()
         }else{
             console.log('dont continue')
-            input[0].style.color = 'red'
-            input[0].placeholder = 'please, complete this'
-            input[0].style.borderBottomColor = 'red'
+            const inp = document.getElementById('inpInt')
+            inp.style.color = 'red'
+            inp.placeholder = 'please, complete this'
+            inp.style.borderBottomColor = 'red'
         }
     }
     back(e){
@@ -58,7 +59,7 @@ class PersonalDetails extends Component{
                 className="input"
                 id="inpInt"
                 type="text"
-                defaultValue={values.interesting}/>
+                />
                 <button className="saveInterest" onClick={this.save}></button>
 
                 <br/>
