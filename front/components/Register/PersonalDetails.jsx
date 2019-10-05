@@ -13,13 +13,13 @@ class PersonalDetails extends Component{
     
       saveAndContinue(e){
         e.preventDefault()
-        const input = document.getElementsByClassName('input')[0]
-        // console.log(input)
-        if(input.value != ''){
-            // console.log('Continue')
+        input = this.props.list
+        console.log(input)
+        if(input != ''){
+            console.log('Continue')
             this.props.nextStep()
         }else{
-            // console.log('dont continue')
+            console.log('dont continue')
             input.style.color = 'red'
             input.placeholder = 'please, complete this'
             input.style.borderBottomColor = 'red'
@@ -41,7 +41,7 @@ class PersonalDetails extends Component{
         const {values}=this.props
         const interest =values.interesting
 
-        const list = interest.map((interest,i)=>{
+        this.props.list = interest.map((interest,i)=>{
             return(
             <div key={i} className="boxList">
             <p className="textList"

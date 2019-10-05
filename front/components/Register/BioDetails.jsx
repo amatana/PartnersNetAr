@@ -43,7 +43,7 @@ render(){
             name='bio'
             onChange={this.props.handleChange}
             defaultValue={values.bio}
-            required/> 
+            /> 
             <div>
                 <button className="back" onClick={this.back} >Ver pregunta anterior</button>
                 <button className="continuar" onClick={this.saveAndContinue} >Siguiente pregunta</button>
