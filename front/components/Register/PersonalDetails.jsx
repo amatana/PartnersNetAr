@@ -13,7 +13,7 @@ class PersonalDetails extends Component{
     
       saveAndContinue(e){
         e.preventDefault()
-        input = document.getElementsByClassName('boxList')
+        const input = document.getElementsByClassName('boxList')
         console.log(input.length)
         if(input.length != 0){
             console.log('Continue')
