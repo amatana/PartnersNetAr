@@ -11,7 +11,14 @@ class EmailDetails extends Component{
     
     saveAndContinue(e){
         e.preventDefault()
-        this.props.nextStep()
+        const input = document.getElementsByClassName('input')[0].value
+        console.log(input)
+        if(input != ''){
+            console.log('Continue')
+        }else{
+            console.log('dont continue')
+        }
+        // this.props.nextStep()
     }
 
     render(){
