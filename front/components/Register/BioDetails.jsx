@@ -11,7 +11,7 @@ class BioDetails extends Component{
 
       saveAndContinue(e){
         e.preventDefault()
-        const input = document.getElementsByClassName('input')[0]
+        const input = document.getElementsByClassName('textarea')[0]
         // console.log(input)
         if(input.value != ''){
             // console.log('Continue')
