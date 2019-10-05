@@ -8,18 +8,19 @@ class PersonalDetails extends Component{
         this.saveAndContinue = this.saveAndContinue.bind(this)
         this.back = this.back.bind(this)
         this.save = this.save.bind(this)
+        this.onChange = this.onChange.bind(this)
       } 
    
     
       saveAndContinue(e){
         e.preventDefault()
         const input = document.getElementsByClassName('boxList')
-        console.log(input.length)
+        // console.log(input.length)
         if(input.length != 0){
-            console.log('Continue')
+            // console.log('Continue')
             this.props.nextStep()
         }else{
-            console.log('dont continue')
+            // console.log('dont continue')
             const inp = document.getElementById('inpInt')
             inp.style.color = 'red'
             inp.placeholder = 'please, complete this'
@@ -36,6 +37,12 @@ class PersonalDetails extends Component{
         const input= document.getElementById('inpInt')
         this.props.handleInterest(input)
         input.value= ''
+    }
+
+    onChange(e){
+        e.preventDefault()
+        e.target.style.color= 'black'
+        e.target.style.borderBottomColor= 'black'
     }
 
     render(){
@@ -59,6 +66,7 @@ class PersonalDetails extends Component{
                 className="input"
                 id="inpInt"
                 type="text"
+                onChange = {this.onChange}
                 />
                 <button className="saveInterest" onClick={this.save}></button>
 
