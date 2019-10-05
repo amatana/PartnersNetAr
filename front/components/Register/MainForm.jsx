@@ -66,6 +66,7 @@ class MainForm extends Component {
 
   handleChange(event) {
     console.log(this.state);
+    event.target.style.color= 'black'
     if (event.target.type !== "checkbox") {
       this.setState({
         [event.target.attributes.name.nodeValue]: event.target.value

@@ -43,7 +43,7 @@ class TypeProy extends Component{
                 name="typeProy"
                 onChange={this.props.handleChange}
                 defaultValue={values.linkedin} 
-                required/>
+                />
                 <div>
                     <button className="back" onClick={this.back} >Ver pregunta anterior</button>
                     <button className="continuar" onClick={this.saveAndContinue}>Siguiente Pregunta</button>
