@@ -35,8 +35,8 @@ class Confirmation extends Component{
         formData.append('bio',this.bio)
         formData.append('type',this.type)
         formData.append('interesting',this.interesting)
-        console.log(this.interesting)
-        console.log('finish',formData)
+        // console.log(this.interesting)
+        // console.log('finish',formData)
         const res = await fetch(this.URI,{
             method: 'POST',
             body: formData,

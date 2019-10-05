@@ -40,7 +40,7 @@ class ImageProy extends Component{
     save(e){
         e.preventDefault()
         const input= document.getElementById('fileUpload')
-        console.log(this.props)
+        // console.log(this.props)
         //this.props.handleInterest(input)
         // input.value= ''
         const div = document.getElementById('value')
