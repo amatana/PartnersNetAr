@@ -369,6 +369,19 @@ option[selected] {
   font-size: 1.85em;
   font-family: "FontAwesome";
 }
+
+.uploadFile {
+  background-color: transparent;
+  border: transparent;
+}
+.uploadFile:before {
+  color: #ef4166;
+  content: "\f093";
+  font-size: 1.85em;
+  font-family: "FontAwesome";
+}
+
+
 /*
 .pitchProyecto {
   height: 56px;

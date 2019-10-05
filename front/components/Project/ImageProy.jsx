@@ -75,8 +75,8 @@ class ImageProy extends Component{
                 
                 <label htmlFor="fileUpload" id="value" className="subir">
                 </label>
-                <label htmlFor="fileUpload" className="saveInterest"></label>
-                {/* <button className="saveInterest" onClick={this.save}></button> */}
+                <label htmlFor="fileUpload" className="uploadFile"></label>
+                {/* <button className="uploadFile" onClick={this.save}></button> */}
                 
                 <br/>
                 {/* {list} */}
