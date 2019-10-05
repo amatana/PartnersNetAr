@@ -43,7 +43,7 @@ class PersonalDetails extends Component{
         <div>
             <Welcome/>
             <form>
-                <p className="pregunta">4.Cuales son tus principales intereses?</p>
+                <p className="pregunta">7.Cuales son tus principales intereses?</p>
                 <input 
                 className="input"
                 id="inpInt"

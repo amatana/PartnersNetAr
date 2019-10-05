@@ -34,7 +34,7 @@ class NameProy extends Component{
                 <input
                 className="input" 
                 
-                type="text"
+                type="name"
                 name="nameProy"
                 onChange={this.props.handleChange}
                 defaultValue={values.email} />

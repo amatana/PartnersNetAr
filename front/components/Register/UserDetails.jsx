@@ -30,7 +30,7 @@ class UserDetails extends Component{
                 <p  className="pregunta">2. Coloca tu nombre de usuario</p>
                 <input 
                 className="input"
-                type="text"
+                type="name"
                 name='user'
                 onChange={this.props.handleChange}
                 defaultValue={values.user} />
