@@ -38,7 +38,7 @@ class EmailDetails extends Component{
                 name='email'
                 onChange={this.props.handleChange}
                 defaultValue={values.email} 
-                required/>
+                />
                 <div>
                     <button className="continuar" onClick={this.saveAndContinue}>Siguiente Pregunta</button>
                 </div>
