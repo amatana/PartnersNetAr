@@ -58,7 +58,7 @@ class TypeDetails extends Component{
                 type='button'
                 value='QC'
                 onClick={this.props.handleChange}
-                >Quiero colaborar en un proyecto</option><br/>
+                >No tengo proyecto</option><br/>
                 <option 
                 type='button'
                 className="typeButton"
