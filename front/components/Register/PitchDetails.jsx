@@ -37,6 +37,8 @@ class PitchDetails extends Component{
         if (e.keyCode === 13) {
             console.log('next')
             document.getElementsByClassName("continuar")[0].click();
+        }else{
+            e.keyCode = e.keyCode
         }
 
     }
@@ -54,7 +56,7 @@ render(){
             type="text"
             name='pitch'
             onChange={this.props.handleChange}
-            onKeyDown = {this.enter}
+            // onKeyDown = {this.enter}
             defaultValue={values.pitch}/> 
             <div>
                 <button className="back" onClick={this.back} >Ver pregunta anterior</button>
