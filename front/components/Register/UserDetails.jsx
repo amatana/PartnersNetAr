@@ -7,6 +7,7 @@ class UserDetails extends Component{
    
         this.saveAndContinue = this.saveAndContinue.bind(this)
         this.back = this.back.bind(this)
+        this.enter = this.enter.bind(this)
       } 
 
       saveAndContinue(e){
@@ -29,6 +30,15 @@ class UserDetails extends Component{
         this.props.prevStep()
     }
 
+    enter(e){
+
+        e.preventDefault();
+        if (e.keyCode === 13) {
+            document.getElementsByClassName("continuar")[0].click();
+        }
+
+    }
+
 
     render(){
         const {values}=this.props
@@ -43,6 +53,7 @@ class UserDetails extends Component{
                 type="name"
                 name='user'
                 onChange={this.props.handleChange}
+                onKeyUp = {this.enter}
                 defaultValue={values.user} />
                 <div>
                     <button className="back" onClick={this.back} >Ver pregunta anterior</button>

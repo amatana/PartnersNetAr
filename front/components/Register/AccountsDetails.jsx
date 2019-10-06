@@ -7,6 +7,7 @@ class TypeProy extends Component{
 
         this.saveAndContinue = this.saveAndContinue.bind(this)
         this.back = this.back.bind(this)
+        this.enter = this.enter.bind(this)
     }
 
     saveAndContinue(e){
@@ -16,6 +17,15 @@ class TypeProy extends Component{
     back(e){
         e.preventDefault()
         this.props.prevStep()
+    }
+
+    enter(e){
+
+        e.preventDefault();
+        if (e.keyCode === 13) {
+            document.getElementsByClassName("continuar")[0].click();
+        }
+
     }
 
 
@@ -32,6 +42,7 @@ class TypeProy extends Component{
                 type="text"
                 name="account"
                 onChange={this.props.handleChange}
+                onKeyUp = {this.enter}
                 defaultValue={values.account} 
                 />
                 <div>
