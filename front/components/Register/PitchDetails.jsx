@@ -54,7 +54,7 @@ render(){
             type="text"
             name='pitch'
             onChange={this.props.handleChange}
-            onKeyUp = {this.enter}
+            onKeyDown = {this.enter}
             defaultValue={values.pitch}/> 
             <div>
                 <button className="back" onClick={this.back} >Ver pregunta anterior</button>

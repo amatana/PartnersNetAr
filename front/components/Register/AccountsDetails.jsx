@@ -43,7 +43,7 @@ class TypeProy extends Component{
                 type="text"
                 name="account"
                 onChange={this.props.handleChange}
-                onKeyUp = {this.enter}
+                onKeyDown = {this.enter}
                 defaultValue={values.account} 
                 />
                 <div>
