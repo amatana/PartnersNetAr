@@ -6,7 +6,7 @@
 i{
   font-family: "FontAwesome"
 }
-/* 
+
 html,
 body {
   height: 100%;
@@ -76,7 +76,7 @@ body {
   height: inherit;
   width: inherit;
 }
-
+/*
 .tituloProyecto {
   font-weight: 700;
 }
@@ -86,13 +86,6 @@ body {
   border-radius: 50%;
   width: 10%;
 }
-
-/* .landingBackground {
-  min-height: 100%;
-  min-width: 100%;
-  background-color: blue;
-  text-align: center;
-} */
 /*
 .partners {
   border: 2px solid #fff;
@@ -358,7 +351,7 @@ option[selected] {
   line-height: 24px;
   font-family: "Nunito";
 }
-
+*/
 .saveInterest {
   background-color: transparent;
   border: transparent;
@@ -370,6 +363,19 @@ option[selected] {
   font-family: "FontAwesome";
 }
 
+.uploadFile {
+  background-color: transparent;
+  border: transparent;
+}
+.uploadFile:before {
+  color: #ef4166;
+  content: "\f093";
+  font-size: 1.85em;
+  font-family: "FontAwesome";
+}
+
+
+/*
 .pitchProyecto {
   height: 56px;
   width: 617px;

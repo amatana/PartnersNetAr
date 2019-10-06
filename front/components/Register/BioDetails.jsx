@@ -9,9 +9,19 @@ class BioDetails extends Component{
         this.back = this.back.bind(this)
       }    
 
-    saveAndContinue(e){
+      saveAndContinue(e){
         e.preventDefault()
-        this.props.nextStep()
+        const input = document.getElementsByClassName('textarea')[0]
+        // console.log(input)
+        if(input.value != ''){
+            // console.log('Continue')
+            this.props.nextStep()
+        }else{
+            // console.log('dont continue')
+            input.style.color = 'red'
+            input.placeholder = 'please, complete this'
+            input.style.borderBottomColor = 'red'
+        }
     }
 
     back(e){
@@ -32,7 +42,8 @@ render(){
             type="text"
             name='bio'
             onChange={this.props.handleChange}
-            defaultValue={values.bio}/> 
+            defaultValue={values.bio}
+            /> 
             <div>
                 <button className="back" onClick={this.back} >Ver pregunta anterior</button>
                 <button className="continuar" onClick={this.saveAndContinue} >Siguiente pregunta</button>

@@ -40,8 +40,8 @@ class LandingForm extends Component {
 				Partners es una red social colaborativa que conecta emprendedores con ganas de crecer y y potenciar sus proyectos.<br/>
 				En este espacio vas a poder compartir tus proyectos, dar y recibir feedback de otros emprendedores. Intercambiar conocimientos y promover una cultura colaborativa.
 			</p>
-			<div className="button-outline">Quiero saber mas</div>
-			<div className="button " id="join-register" onClick={this.registrarse}>Quiero unirme</div>
+			<div className="back">Quiero saber mas</div>
+			<div className="continuar " id="join-register" onClick={this.registrarse}>Quiero unirme</div>
 		</div>
 
   <div className="overlay">

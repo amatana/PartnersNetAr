@@ -11,7 +11,17 @@ class EmailDetails extends Component{
     
     saveAndContinue(e){
         e.preventDefault()
-        this.props.nextStep()
+        const input = document.getElementsByClassName('input')[0]
+        // console.log(input)
+        if(input.value != ''){
+            // console.log('Continue')
+            this.props.nextStep()
+        }else{
+            // console.log('dont continue')
+            input.style.color = 'red'
+            input.placeholder = 'please, complete this'
+            input.style.borderBottomColor = 'red'
+        }
     }
 
     render(){
@@ -24,10 +34,11 @@ class EmailDetails extends Component{
                 <p className="pregunta">1. Confirmanos tu email</p>
                 <input
                 className="input" 
-                type="text"
+                type="email"
                 name='email'
                 onChange={this.props.handleChange}
-                defaultValue={values.email} />
+                defaultValue={values.email} 
+                />
                 <div>
                     <button className="continuar" onClick={this.saveAndContinue}>Siguiente Pregunta</button>
                 </div>

@@ -47,7 +47,7 @@ class MainProy extends Component {
     this.setState({
       step: step + 1
     });
-    console.log(this.state);
+    // console.log(this.state);
   }
   prevStep() {
     const { step } = this.state;
@@ -57,6 +57,8 @@ class MainProy extends Component {
   }
 
   handleChange(event) {
+    event.target.style.color= 'black'
+    event.target.style.borderBottomColor= 'black'
     if (event.target.type !== "checkbox") {
       this.setState({ [event.target.name]: event.target.value });
     } else {
@@ -74,10 +76,10 @@ class MainProy extends Component {
         step: step + 1
       });
     }
-    console.log(this.state);
+    // console.log(this.state);
   }
   handleFile(event, input) {
-    console.log(input[0]);
+    // console.log(input[0]);
     this.setState({
       [event.name]: input[0]
     });
@@ -88,7 +90,7 @@ class MainProy extends Component {
     const list = this.state.teamProy;
     list.push(int);
     this.forceUpdate();
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   render() {

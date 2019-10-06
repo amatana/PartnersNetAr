@@ -13,7 +13,7 @@ class TeamProy extends Component{
     saveAndContinue(e){
         e.preventDefault()
         this.props.nextStep()
-        
+
     }
     back(e){
         e.preventDefault()

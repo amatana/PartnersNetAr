@@ -40,7 +40,7 @@ class ImageProy extends Component{
     save(e){
         e.preventDefault()
         const input= document.getElementById('fileUpload')
-        console.log(this.props)
+        // console.log(this.props)
         //this.props.handleInterest(input)
         // input.value= ''
         const div = document.getElementById('value')
@@ -75,8 +75,8 @@ class ImageProy extends Component{
                 
                 <label htmlFor="fileUpload" id="value" className="subir">
                 </label>
-                <label htmlFor="fileUpload" className="saveInterest"></label>
-                {/* <button className="saveInterest" onClick={this.save}></button> */}
+                <label htmlFor="fileUpload" className="uploadFile"></label>
+                {/* <button className="uploadFile" onClick={this.save}></button> */}
                 
                 <br/>
                 {/* {list} */}

@@ -2,8 +2,8 @@
 // Configuración 
 const app = require('express')()
 const User = require('../models/Users')//.default.default
-const dotenv = require('dotenv')
-dotenv.config()
+// const dotenv = require('dotenv')
+// dotenv.config()
 
 module.exports = function (passport){
 passport.serializeUser(function (user, done) {
@@ -34,7 +34,7 @@ passport.use(new localStrategy(
 //Estrategia Facebook de Autorización
 const FacebookStrategy = require('passport-facebook').Strategy;
 passport.use(new FacebookStrategy({
-        clientID: process.env.FACEBOOK_APP_ID,
+        clientID: '2390857660990217',//process.env.FACEBOOK_APP_ID,
         clientSecret: process.env.FACEBOOK_APP_SECRET,
         callbackURL: "http://localhost:8081/auth/facebook/callback",
         profileFields: ['id', 'email', 'gender', 'link', 'locale', 'name', 'timezone', 'updated_time', 'verified'],
@@ -68,7 +68,7 @@ passport.use(new FacebookStrategy({
 //Estrategia Google de Autorización
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 passport.use(new GoogleStrategy({
-    clientID: process.env.GOOGLE_CONSUMER_KEY,
+    clientID: '1074376494014-8j1okjpiokssu1ijkui4uqhlpghkikr9.apps.googleusercontent.com',//process.env.GOOGLE_CONSUMER_KEY,
     clientSecret: process.env.GOOGLE_CONSUMER_SECRET,
     callbackURL: "http://localhost:8081/auth/google/callback"
 },

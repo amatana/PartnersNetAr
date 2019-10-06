@@ -39,7 +39,7 @@ class TypeDetails extends Component{
         <div>
             <Welcome/>
             <form>
-                <p className="pregunta">3. Qué tipo de emprendedor sos?</p>
+                <p className="pregunta">6. Qué tipo de emprendedor sos?</p>
 
                 <option 
                 type='button'
@@ -58,7 +58,7 @@ class TypeDetails extends Component{
                 type='button'
                 value='QC'
                 onClick={this.props.handleChange}
-                >Quiero colaborar en un proyecto</option><br/>
+                >No tengo proyecto</option><br/>
                 <option 
                 type='button'
                 className="typeButton"

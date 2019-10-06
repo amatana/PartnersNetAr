@@ -48,4 +48,8 @@ textarea {
 	background: #f5f5f6;
     padding: 10px;
     border-bottom: 1px solid;
-    font-weight: 600;}
+	font-weight: 600;
+	border-top: transparent;
+	border-right: transparent;
+	border-left: transparent;
+}

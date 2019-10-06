@@ -14,7 +14,7 @@ class Confirmation extends Component{
         this.haveProy=haveProy
         this.needProy=needProy
         this.teamProy=teamProy
-        this.URI= 'http://localhost:8081/api/proyect'
+        this.URI= '/api/proyect'
         this.saveAndContinue = this.saveAndContinue.bind(this)
         this.back = this.back.bind(this)
     }
@@ -37,14 +37,14 @@ class Confirmation extends Component{
         formData.append('haveProy',this.haveProy)
         formData.append('needProy',this.needProy)
         formData.append('teamProy',this.teamProy)
-        console.log(this.pitchProy)
-        console.log('finish',formData)
+        // console.log(this.pitchProy)
+        // console.log('finish',formData)
         const res = await fetch(this.URI,{
             method: 'POST',
             body: formData,
         })
         const data = await res.json()
-        console.log(data)
+        // console.log(data)
         this.props.toproy('/profile')
         
     }
@@ -66,8 +66,8 @@ class Confirmation extends Component{
                     <li className="confirmList">Name: {nameProy}</li>
                     <li className="confirmList">Type: {typeProy}</li>
                     <li className="confirmList">Info: {infoProy}</li>
-                    <li className="confirmList">Pitch: {pitchProy.name}</li>
-                    <li className="confirmList">Image: {imageProy.name}</li>
+                    <li className="confirmList">Pitch: {pitchProy?pitchProy.name:''}</li>
+                    <li className="confirmList">Image: {imageProy?imageProy.name:''}</li>
                     <li className="confirmList">Phrase: {phraseProy}</li>
                     <li className="confirmList">Have: {haveProy}</li>
                     <li className="confirmList">Need: {needProy}</li>

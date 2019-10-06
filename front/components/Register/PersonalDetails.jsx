@@ -8,12 +8,24 @@ class PersonalDetails extends Component{
         this.saveAndContinue = this.saveAndContinue.bind(this)
         this.back = this.back.bind(this)
         this.save = this.save.bind(this)
+        this.onChange = this.onChange.bind(this)
       } 
    
     
-    saveAndContinue(e){
+      saveAndContinue(e){
         e.preventDefault()
-        this.props.nextStep()
+        const input = document.getElementsByClassName('boxList')
+        // console.log(input.length)
+        if(input.length != 0){
+            // console.log('Continue')
+            this.props.nextStep()
+        }else{
+            // console.log('dont continue')
+            const inp = document.getElementById('inpInt')
+            inp.style.color = 'red'
+            inp.placeholder = 'please, complete this'
+            inp.style.borderBottomColor = 'red'
+        }
     }
     back(e){
         e.preventDefault()
@@ -25,6 +37,12 @@ class PersonalDetails extends Component{
         const input= document.getElementById('inpInt')
         this.props.handleInterest(input)
         input.value= ''
+    }
+
+    onChange(e){
+        e.preventDefault()
+        e.target.style.color= 'black'
+        e.target.style.borderBottomColor= 'black'
     }
 
     render(){
@@ -43,12 +61,13 @@ class PersonalDetails extends Component{
         <div>
             <Welcome/>
             <form>
-                <p className="pregunta">4.Cuales son tus principales intereses?</p>
+                <p className="pregunta">7.Cuales son tus principales intereses?</p>
                 <input 
                 className="input"
                 id="inpInt"
                 type="text"
-                defaultValue={values.interesting}/>
+                onChange = {this.onChange}
+                />
                 <button className="saveInterest" onClick={this.save}></button>
 
                 <br/>
