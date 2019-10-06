@@ -6,7 +6,7 @@
 i{
   font-family: "FontAwesome"
 }
-/* 
+
 html,
 body {
   height: 100%;
@@ -76,7 +76,7 @@ body {
   height: inherit;
   width: inherit;
 }
-
+/*
 .tituloProyecto {
   font-weight: 700;
 }
