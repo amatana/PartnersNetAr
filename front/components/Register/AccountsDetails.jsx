@@ -23,6 +23,7 @@ class TypeProy extends Component{
 
         e.preventDefault();
         if (e.keyCode === 13) {
+            console.log('next')
             document.getElementsByClassName("continuar")[0].click();
         }
 
