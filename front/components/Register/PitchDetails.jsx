@@ -57,7 +57,8 @@ render(){
             name='pitch'
             onChange={this.props.handleChange}
             // onKeyDown = {this.enter}
-            defaultValue={values.pitch}/> 
+            defaultValue={values.pitch}
+            autoFocus/> 
             <div>
                 <button className="back" onClick={this.back} >Ver pregunta anterior</button>
                 <button className="continuar" onClick={this.saveAndContinue} >Siguiente pregunta</button>
