@@ -58,14 +58,21 @@ class MainForm extends Component {
     });
   }
   prevStep() {
-    const { step } = this.state;
-    this.setState({
-      step: step - 1
-    });
+    const { step, type } = this.state;
+    if (type === 'ORG') {
+      this.setState({
+        step: step - 2
+      });
+    }else{
+      this.setState({
+        step: step - 1
+      });
+    }
   }
 
   handleChange(event) {
     // console.log(this.state);
+    // console.log(event.target.attributes.value)
     event.target.style.color= 'black'
     event.target.style.borderBottomColor= 'black'
     if (event.target.type !== "checkbox") {
@@ -75,16 +82,28 @@ class MainForm extends Component {
     }
     if (event.target.attributes.name.nodeValue === "type") {
       const { step } = this.state;
-      this.setState({
-        step: step + 1
-      });
+      if (event.target.attributes.value.value === 'ORG') {
+        this.setState({
+          step: step + 2
+        });
+      }else{
+        this.setState({
+          step: step + 1
+        });
+      }
     }
   }
 
-  handleInterest(input) {
-    const int = input.value;
+  handleInterest(input,title='') {
     const list = this.state.interesting;
-    list.push(int);
+    if(title===''){
+      list.push(input);
+    }else{
+      console.log(list)
+      let i = list.indexOf( title );
+      list.splice( i, 1 );
+      console.log(list)
+    }
     this.forceUpdate();
     // console.log(this.state);
   }

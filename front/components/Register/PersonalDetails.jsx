@@ -9,6 +9,8 @@ class PersonalDetails extends Component{
         this.back = this.back.bind(this)
         this.save = this.save.bind(this)
         this.onChange = this.onChange.bind(this)
+        this.delete = this.delete.bind(this)
+        
       } 
    
     
@@ -35,8 +37,15 @@ class PersonalDetails extends Component{
     save(e){
         e.preventDefault()
         const input= document.getElementById('inpInt')
-        this.props.handleInterest(input)
+        this.props.handleInterest(input.value)
         input.value= ''
+    }
+    
+    delete(e){
+        e.preventDefault()
+        const input= document.getElementById('inpInt')
+        const elemento = e.target.parentNode.firstChild.innerText
+        this.props.handleInterest(input.value,elemento)
     }
 
     onChange(e){
@@ -54,6 +63,7 @@ class PersonalDetails extends Component{
             <div key={i} className="boxList">
             <p className="textList"
             >{interest}</p>
+            <span className="delete" onClick={this.delete}>delete</span>
             </div>)
        })
 
@@ -67,6 +77,7 @@ class PersonalDetails extends Component{
                 id="inpInt"
                 type="text"
                 onChange = {this.onChange}
+                autoFocus
                 />
                 <button className="saveInterest" onClick={this.save}></button>
 

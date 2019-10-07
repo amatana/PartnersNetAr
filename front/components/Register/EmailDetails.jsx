@@ -15,7 +15,13 @@ class EmailDetails extends Component{
         // console.log(input)
         if(input.value != ''){
             // console.log('Continue')
+            if (/^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|es)$/i.test(input.value)){
             this.props.nextStep()
+            }else{
+                input.style.color = 'red'
+                input.placeholder = 'please, complete with a valid email'
+                input.style.borderBottomColor = 'red'
+            }
         }else{
             // console.log('dont continue')
             input.style.color = 'red'
@@ -38,6 +44,7 @@ class EmailDetails extends Component{
                 name='email'
                 onChange={this.props.handleChange}
                 defaultValue={values.email} 
+                autoFocus
                 />
                 <div>
                     <button className="continuar" onClick={this.saveAndContinue}>Siguiente Pregunta</button>

@@ -21,9 +21,8 @@ class TypeProy extends Component{
 
     enter(e){
 
-        e.preventDefault();
         if (e.keyCode === 13) {
-            console.log('next')
+            e.preventDefault();
             document.getElementsByClassName("continuar")[0].click();
         }
 
@@ -43,8 +42,9 @@ class TypeProy extends Component{
                 type="text"
                 name="account"
                 onChange={this.props.handleChange}
-                // onKeyDown = {this.enter}
+                onKeyDown = {this.enter}
                 defaultValue={values.account} 
+                autoFocus
                 />
                 <div>
                     <button className="back" onClick={this.back} >Ver pregunta anterior</button>

@@ -43,6 +43,7 @@ render(){
             name='bio'
             onChange={this.props.handleChange}
             defaultValue={values.bio}
+            autoFocus
             /> 
             <div>
                 <button className="back" onClick={this.back} >Ver pregunta anterior</button>

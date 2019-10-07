@@ -32,9 +32,8 @@ class UserDetails extends Component{
 
     enter(e){
 
-        e.preventDefault();
         if (e.keyCode === 13) {
-            console.log('next')
+            e.preventDefault();
             document.getElementsByClassName("continuar")[0].click();
         }
 
@@ -54,8 +53,9 @@ class UserDetails extends Component{
                 type="name"
                 name='user'
                 onChange={this.props.handleChange}
-                // onKeyDown = {this.enter}
-                defaultValue={values.user} />
+                onKeyDown = {this.enter}
+                defaultValue={values.user} 
+                autoFocus/>
                 <div>
                     <button className="back" onClick={this.back} >Ver pregunta anterior</button>
                     <button className="continuar" onClick={this.saveAndContinue}>Siguiente Pregunta</button>
