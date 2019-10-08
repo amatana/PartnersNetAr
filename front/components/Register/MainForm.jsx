@@ -16,7 +16,7 @@ class MainForm extends Component {
     super(props);
 
     this.state = {
-      step: 1,
+      step: 2,
       email: "",
       user: "",
       linkedin: "",

@@ -30,19 +30,7 @@ class PitchDetails extends Component{
         this.props.prevStep()
     }
 
-
-    enter(e){
-
-        e.preventDefault();
-        if (e.keyCode === 13) {
-            console.log('next')
-            document.getElementsByClassName("continuar")[0].click();
-        }else{
-            e.keyCode = e.keyCode
-        }
-
-    }
-
+    
 render(){
     const {values} = this.props
     
@@ -56,7 +44,6 @@ render(){
             type="text"
             name='pitch'
             onChange={this.props.handleChange}
-            // onKeyDown = {this.enter}
             defaultValue={values.pitch}
             autoFocus/> 
             <div>

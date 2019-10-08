@@ -57,7 +57,7 @@ class UserDetails extends Component{
                 defaultValue={values.user} 
                 autoFocus/>
                 <div>
-                    <button className="back" onClick={this.back} >Ver pregunta anterior</button>
+                    {/* <button className="back" onClick={this.back} >Ver pregunta anterior</button> */}
                     <button className="continuar" onClick={this.saveAndContinue}>Siguiente Pregunta</button>
                </div>
             </form>
