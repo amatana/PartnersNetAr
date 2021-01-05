@@ -20,7 +20,7 @@
   "homepage": "https://github.com/amatana/PartnersNetAr#readme",
   "dependencies": {
     "@types/dotenv": "^6.1.1",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "body-parser": "^1.19.0",
     "connect-session-sequelize": "^6.0.0",
